@@ -1,0 +1,129 @@
+---
+import '@fontsource-variable/inter';
+import '@fontsource-variable/space-grotesk';
+import '@fontsource/jetbrains-mono';
+import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
+import CallFAB from '../components/CallFAB.tsx';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Centre Service IT - Profesjonalny serwis elektroniki i systemy bezpieczeństwa w Tarnowie." } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Centre Service IT",
+  "image": "https://csi-tarnow.pl/favicon.svg",
+  "@id": "https://csi-tarnow.pl",
+  "url": "https://csi-tarnow.pl",
+  "telephone": "+48504365205",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "",
+    "addressLocality": "Tarnów",
+    "postalCode": "",
+    "addressCountry": "PL"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 50.0121,
+    "longitude": 20.9858
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "09:00",
+    "closes": "17:00"
+  },
+  "sameAs": []
+};
+---
+
+<!doctype html>
+<html lang="pl" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Primary Meta Tags -->
+		<title>{title} | Centre Service IT</title>
+		<meta name="title" content={`${title} | Centre Service IT`} />
+		<meta name="description" content={description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={`${title} | Centre Service IT`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL('/favicon.svg', Astro.url)} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={`${title} | Centre Service IT`} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL('/favicon.svg', Astro.url)} />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)} />
+
+		<ClientRouter />
+	</head>
+	<body class="overflow-x-hidden">
+		<slot />
+		<CallFAB client:load />
+	</body>
+</html>
+
+<style is:global>
+  /* Mobile-first refinement */
+  @media (max-width: 640px) {
+    h1 {
+      font-size: 2.75rem !important; /* ~44px */
+      line-height: 1 !important;
+    }
+    h2 {
+      font-size: 2rem !important; /* ~32px */
+      line-height: 1.1 !important;
+    }
+    .container-custom {
+      padding-left: 1.5rem !important;
+      padding-right: 1.5rem !important;
+    }
+  }
+
+  /* Optimized touch targets */
+  a, button {
+    @apply touch-manipulation;
+  }
+
+  /* Smooth reveal utility */
+  [data-astro-reveal] {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes reveal {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

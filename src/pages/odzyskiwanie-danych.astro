@@ -1,0 +1,149 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const sources = [
+  { title: 'Dyski HDD', desc: 'Uszkodzenia mechaniczne, logiczne, po upadku lub zalaniu. Dyski "stukające".', id: '01' },
+  { title: 'Dyski SSD i NVMe', desc: 'Uszkodzona elektronika, przepięcia, błędy systemu plików.', id: '02' },
+  { title: 'Pendrive\'y i USB', desc: 'Złamane, sformatowane, nierozpoznawane przez komputer.', id: '03' },
+  { title: 'Karty pamięci', desc: 'SD, microSD, CF — z aparatów, dronów, kamer i telefonów.', id: '04' },
+  { title: 'RAID i NAS', desc: 'Odzyskiwanie danych z uszkodzonych macierzy dla firm.', id: '05' }
+];
+
+const dataTypes = [
+  'Zdjęcia i filmy rodzinne', 'Dokumenty i arkusze', 'Projekty graficzne/CAD', 
+  'Bazy danych i ERP', 'Kopie zapasowe', 'Dane firmowe i e-mail'
+];
+---
+
+<Layout 
+  title="Odzyskiwanie Danych | HDD, SSD, Pendrive" 
+  description="Profesjonalne odzyskiwanie danych z uszkodzonych dysków, kart pamięci i pendrive w Tarnowie. Bezpłatna analiza. No data - no fee. Tel: 504 365 205."
+>
+  <Navbar />
+  
+  <main class="pt-20">
+    <!-- HERO -->
+    <header class="py-24 lg:py-32 bg-white relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-1/3 h-full bg-slate-50 -skew-x-12 translate-x-1/2"></div>
+      <div class="container-custom relative">
+        <div class="max-w-4xl">
+          <span class="technical-label mb-6 block">Dyski twarde · SSD · Pendrive · Karty pamięci</span>
+          <h1 class="text-5xl lg:text-8xl font-display font-bold text-brand-secondary leading-[0.9] mb-8">
+            Twoje dane nie są stracone. <span class="text-brand-primary block">Jeszcze nie.</span>
+          </h1>
+          <p class="text-xl lg:text-2xl text-slate-600 max-w-2xl mb-12 leading-relaxed">
+            Odzyskujemy pliki z uszkodzonych, sformatowanych i niedziałających nośników. Działamy szybko, skutecznie i z zachowaniem pełnej poufności.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-6 items-center">
+            <a href="tel:504365205" class="bg-brand-primary text-white px-10 py-5 rounded-sm font-display font-bold text-lg inline-flex items-center gap-4 hover:bg-brand-secondary transition-all shadow-xl">
+              → Zadzwoń: 504 365 205
+            </a>
+            <p class="text-sm font-mono text-slate-400 max-w-[200px] leading-tight uppercase tracking-wider">
+              Nie wyłączaj urządzenia. Czas ma znaczenie.
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- SOURCES -->
+    <section class="py-32 bg-slate-900 text-white">
+      <div class="container-custom">
+        <div class="mb-20">
+          <span class="technical-label text-brand-primary mb-4 block">Skąd odzyskujemy dane</span>
+          <h2 class="text-4xl lg:text-6xl font-display font-bold">Odzyskujemy z każdego nośnika</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 overflow-hidden">
+          {sources.map(s => (
+            <div class="bg-slate-900 p-12 hover:bg-white/5 transition-colors">
+              <span class="font-mono text-xs text-brand-primary mb-6 block tracking-widest">{s.id}</span>
+              <h3 class="text-2xl font-display font-bold mb-4">{s.title}</h3>
+              <p class="text-white/60 text-sm leading-relaxed">{s.desc}</p>
+            </div>
+          ))}
+          <div class="bg-brand-primary p-12 flex flex-col justify-center">
+             <h3 class="text-2xl font-display font-bold mb-4">Co odzyskujemy?</h3>
+             <ul class="grid grid-cols-1 gap-2">
+               {dataTypes.map(t => (
+                 <li class="flex items-center gap-2 text-xs font-mono uppercase tracking-wide">
+                   <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
+                   {t}
+                 </li>
+               ))}
+             </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAUSES -->
+    <section class="py-32 bg-white">
+      <div class="container-custom">
+        <div class="max-w-3xl mx-auto text-center mb-20">
+          <h2 class="text-4xl lg:text-5xl font-display font-bold text-brand-secondary mb-6">Utrata danych może zdarzyć się każdemu</h2>
+          <p class="text-slate-600">Nie jesteś sam — większość przypadków wynika z awarii mechanicznych, zalania lub przypadkowego skasowania.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+          <ul class="space-y-6">
+            <li class="flex gap-4">
+              <span class="text-brand-primary font-bold">01/</span>
+              <p class="text-slate-700 font-medium">Awaria mechaniczna (stukanie, szum)</p>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-brand-primary font-bold">02/</span>
+              <p class="text-slate-700 font-medium">Uszkodzenie elektryczne (przepięcie)</p>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-brand-primary font-bold">03/</span>
+              <p class="text-slate-700 font-medium">Zalanie lub upadek urządzenia</p>
+            </li>
+          </ul>
+          <ul class="space-y-6">
+            <li class="flex gap-4">
+              <span class="text-brand-primary font-bold">04/</span>
+              <p class="text-slate-700 font-medium">Przypadkowe skasowanie / format</p>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-brand-primary font-bold">05/</span>
+              <p class="text-slate-700 font-medium">Atak ransomware lub wirusa</p>
+            </li>
+            <li class="flex gap-4">
+              <span class="text-brand-primary font-bold">06/</span>
+              <p class="text-slate-700 font-medium">Błąd systemu plików / aktualizacji</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST & SECURITY -->
+    <section class="py-32 bg-slate-50 border-y border-slate-200">
+      <div class="container-custom text-center max-w-3xl">
+        <h2 class="text-3xl lg:text-4xl font-display font-bold text-brand-secondary mb-8">Poufność Twoich danych jest priorytetem</h2>
+        <p class="text-slate-600 mb-12 leading-relaxed">
+          Pracujemy zgodnie z zasadami RODO. Dane klientów nigdy nie są przekazywane osobom trzecim. Proces odzyskiwania odbywa się w bezpiecznych warunkach.
+        </p>
+        <div class="flex flex-wrap justify-center gap-12 grayscale opacity-50">
+           <span class="font-mono text-xs font-bold tracking-[0.2em] uppercase">RODO Compliant</span>
+           <span class="font-mono text-xs font-bold tracking-[0.2em] uppercase">Secure Transfer</span>
+           <span class="font-mono text-xs font-bold tracking-[0.2em] uppercase">100% Confidential</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-32 bg-brand-primary text-white text-center">
+      <div class="container-custom">
+        <h2 class="text-4xl lg:text-7xl font-display font-bold mb-8 leading-tight">Nie kasuj. Nie formatuj.<br/><span class="text-brand-secondary">Zadzwoń najpierw.</span></h2>
+        <a href="tel:504365205" class="bg-white text-brand-primary px-12 py-6 rounded-sm font-display font-bold text-2xl inline-flex items-center gap-4 hover:bg-brand-secondary hover:text-white transition-all shadow-2xl">
+          → 504 365 205
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

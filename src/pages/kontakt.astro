@@ -1,0 +1,144 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const services = [
+  'Serwis elektroniki', 'Odzyskiwanie danych', 'Monitoring', 'Automatyka', 'Cyberbezpieczeństwo', 'Inne'
+];
+---
+
+<Layout 
+  title="Kontakt | Centre Service IT Tarnów" 
+  description="Skontaktuj się z Centre Service IT w Tarnowie. Bezpłatna konsultacja i wycena usług. Zadzwoń: 504 365 205 lub odwiedź nas osobiście."
+>
+  <Navbar />
+  
+  <main class="pt-20">
+    <!-- HERO -->
+    <header class="py-24 lg:py-40 bg-white border-b border-slate-200">
+      <div class="container-custom">
+        <h1 class="text-5xl lg:text-9xl font-display font-bold text-brand-secondary leading-[0.8] mb-8">
+          Porozmawiajmy. <span class="text-brand-primary block">Bez zobowiązań.</span>
+        </h1>
+        <p class="text-xl lg:text-2xl text-slate-600 max-w-2xl leading-relaxed">
+          Zadzwoń, napisz lub odwiedź nas osobiście. Bezpłatna konsultacja — online i na miejscu w naszym serwisie.
+        </p>
+      </div>
+    </header>
+
+    <!-- CONTACT DETAILS & FORM -->
+    <section class="py-32 bg-slate-50">
+      <div class="container-custom">
+        <div class="grid lg:grid-cols-2 gap-24 items-start">
+          <!-- Details -->
+          <div class="space-y-16">
+            <div>
+              <span class="technical-label mb-6 block">Dane kontaktowe</span>
+              <div class="space-y-8">
+                <a href="tel:504365205" class="group block">
+                  <span class="text-sm font-mono text-slate-400 uppercase tracking-widest block mb-2">Zadzwoń do nas</span>
+                  <span class="text-4xl lg:text-5xl font-display font-bold text-brand-secondary group-hover:text-brand-primary transition-colors">504 365 205</span>
+                </a>
+                <div class="block">
+                  <span class="text-sm font-mono text-slate-400 uppercase tracking-widest block mb-2">Lokalizacja</span>
+                  <span class="text-3xl font-display font-bold text-brand-secondary leading-tight">Tarnów, Małopolska<br/><span class="text-slate-400 text-xl">Ulica i numer (uzupełnij)</span></span>
+                </div>
+                <div class="block">
+                  <span class="text-sm font-mono text-slate-400 uppercase tracking-widest block mb-2">E-mail</span>
+                  <span class="text-2xl font-display font-bold text-brand-secondary underline decoration-2 underline-offset-8">biuro@centreserviceit.pl</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-10 border border-slate-200 shadow-xl">
+               <h4 class="font-display font-bold text-brand-secondary mb-6">Godziny otwarcia</h4>
+               <ul class="space-y-4 text-slate-600 font-mono text-sm uppercase tracking-wider">
+                  <li class="flex justify-between border-b border-slate-100 pb-2"><span>Pn – Pt</span> <span>09:00 – 18:00</span></li>
+                  <li class="flex justify-between border-b border-slate-100 pb-2"><span>Sobota</span> <span>09:00 – 14:00</span></li>
+                  <li class="flex justify-between text-brand-primary"><span>Niedziela</span> <span>Zamknięte</span></li>
+               </ul>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <div class="bg-white p-12 lg:p-16 border border-slate-200 shadow-2xl relative">
+            <div class="absolute -top-4 -right-4 bg-brand-primary text-white p-4 font-mono text-[10px] uppercase tracking-widest shadow-xl">
+               Rapid Response
+            </div>
+            <h3 class="text-3xl font-display font-bold text-brand-secondary mb-10">Wyślij wiadomość</h3>
+            <form class="space-y-6">
+              <div class="grid sm:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label class="technical-label text-[10px] text-slate-400">Imię i nazwisko *</label>
+                  <input type="text" class="w-full bg-slate-50 border border-slate-200 p-4 rounded-sm focus:outline-none focus:border-brand-primary transition-colors font-sans" required />
+                </div>
+                <div class="space-y-2">
+                  <label class="technical-label text-[10px] text-slate-400">Telefon lub e-mail *</label>
+                  <input type="text" class="w-full bg-slate-50 border border-slate-200 p-4 rounded-sm focus:outline-none focus:border-brand-primary transition-colors font-sans" required />
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label class="technical-label text-[10px] text-slate-400">Rodzaj usługi</label>
+                <select class="w-full bg-slate-50 border border-slate-200 p-4 rounded-sm focus:outline-none focus:border-brand-primary transition-colors font-sans appearance-none">
+                  {services.map(s => <option>{s}</option>)}
+                </select>
+              </div>
+              <div class="space-y-2">
+                <label class="technical-label text-[10px] text-slate-400">Opis problemu *</label>
+                <textarea rows="4" class="w-full bg-slate-50 border border-slate-200 p-4 rounded-sm focus:outline-none focus:border-brand-primary transition-colors font-sans" required></textarea>
+              </div>
+              <button type="submit" class="w-full bg-brand-primary text-white py-5 rounded-sm font-display font-bold text-lg hover:bg-brand-secondary transition-all shadow-xl shadow-brand-primary/20">
+                Wyślij wiadomość →
+              </button>
+              <p class="text-[10px] text-slate-400 text-center font-mono uppercase tracking-widest">Odpiszemy w ciągu 24 godzin w dni robocze.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP & AREA -->
+    <section class="py-32 bg-white">
+      <div class="container-custom">
+        <div class="grid lg:grid-cols-2 gap-24 items-center">
+          <div class="order-2 lg:order-1">
+             <div class="aspect-video bg-slate-100 border border-slate-200 flex items-center justify-center relative overflow-hidden group">
+                <div class="technical-label text-slate-300 opacity-20 text-6xl font-black">Interactive Map</div>
+                <div class="absolute inset-0 bg-brand-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <!-- Placeholder for map -->
+                <div class="absolute inset-0 flex items-center justify-center p-12">
+                   <div class="w-full h-full border-2 border-dashed border-slate-200 rounded-sm"></div>
+                </div>
+             </div>
+          </div>
+          <div class="order-1 lg:order-2">
+             <span class="technical-label mb-4 block">Obszar działania</span>
+             <h2 class="text-4xl lg:text-6xl font-display font-bold text-brand-secondary mb-8 leading-tight">Działamy stacjonarnie i z dojazdem</h2>
+             <p class="text-xl text-slate-600 mb-8 leading-relaxed">
+               Nasz główny punkt mieści się w Tarnowie, ale obsługujemy klientów z całej Małopolski: Kraków, Bochnia, Brzesko, Nowy Sącz i okoliczne miejscowości.
+             </p>
+             <div class="bg-brand-primary/5 p-8 border-l-4 border-brand-primary">
+                <p class="text-brand-secondary font-display font-bold">
+                  Zapytaj o wizytę u Ciebie — wiele usług (monitoring, automatyka, serwis IT) realizujemy bezpośrednio na miejscu.
+                </p>
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EMERGENCY -->
+    <section class="py-32 bg-brand-secondary text-white text-center">
+      <div class="container-custom">
+        <span class="technical-label text-brand-primary mb-6 block">Dla pilnych zgłoszeń</span>
+        <h2 class="text-4xl lg:text-7xl font-display font-bold mb-12 max-w-5xl mx-auto leading-tight">Dane zniknęły? Ekran pęknięty?<br/>System nie działa?</h2>
+        <a href="tel:504365205" class="bg-brand-primary text-white px-12 py-8 rounded-sm font-display font-bold text-4xl inline-flex items-center gap-6 hover:bg-white hover:text-brand-primary transition-all shadow-2xl">
+          📞 504 365 205
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

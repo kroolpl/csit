@@ -1,0 +1,142 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const devices = [
+  { title: 'Smartfony i iPhone\'y', features: ['Wymiana ekranów (LCD/OLED)', 'Wymiana baterii', 'Naprawa złącza ładowania', 'Naprawa po zalaniu'], icon: '📱' },
+  { title: 'Laptopy i MacBooki', features: ['Wymiana matrycy', 'Czyszczenie i konserwacja', 'Naprawa płyty głównej', 'Rozbudowa RAM/SSD'], icon: '💻' },
+  { title: 'Tablety', features: ['Wymiana dotyku', 'Wymiana baterii', 'Naprawa gniazd'], icon: '📟' },
+  { title: 'Konsole do gier', features: ['PS, Xbox, Nintendo Switch', 'Naprawa napędów', 'Serwis wentylatorów'], icon: '🎮' },
+  { title: 'Drukarki', features: ['Czyszczenie głowic', 'Mechanizmy podawania', 'Konfiguracja sieci'], icon: '🖨️' }
+];
+
+const steps = [
+  { label: 'Step 01', title: 'Zgłoś usterkę', desc: 'Zadzwoń lub napisz. Opisz problem — powiemy Ci, czy możemy pomóc.' },
+  { label: 'Step 02', title: 'Bezpłatna diagnostyka', desc: 'Diagnozujemy sprzęt bezpłatnie i przedstawiamy wycenę — bez ukrytych kosztów.' },
+  { label: 'Step 03', title: 'Szybka naprawa', desc: 'Większość zleceń realizujemy w ciągu 24–48 godzin od akceptacji.' },
+  { label: 'Step 04', title: 'Odbiór z gwarancją', desc: 'Odbierasz sprzęt z pisemną gwarancją. Twoja satysfakcja jest priorytetem.' }
+];
+
+const faqs = [
+  { q: 'Ile kosztuje diagnostyka?', a: 'Diagnostyka jest u nas bezpłatna. Płacisz wyłącznie za wykonaną naprawę.' },
+  { q: 'Ile trwa naprawa iPhone\'a?', a: 'Wymiana ekranu lub baterii trwa zazwyczaj 1–2 godziny.' },
+  { q: 'Czy dostanę gwarancję?', a: 'Tak. Na każdą naprawę udzielamy pisemnej gwarancji jakości.' }
+];
+---
+
+<Layout 
+  title="Serwis Elektroniki | iPhone, MacBook, Laptopy" 
+  description="Profesjonalna naprawa smartfonów, laptopów i konsol w Tarnowie. Bezpłatna diagnostyka i gwarancja na każdą usługę. Tel: 504 365 205."
+>
+  <Navbar />
+  
+  <main class="pt-20">
+    <!-- HERO -->
+    <header class="py-24 lg:py-32 border-b border-slate-200 bg-white">
+      <div class="container-custom">
+        <span class="technical-label mb-6 block">Naprawa smartfonów, laptopów, tabletów i konsol</span>
+        <h1 class="text-5xl lg:text-8xl font-display font-bold text-brand-secondary leading-[0.9] mb-8 max-w-4xl">
+          Twój sprzęt odmówił posłuszeństwa? <span class="text-brand-primary">Naprawimy go.</span>
+        </h1>
+        <p class="text-xl lg:text-2xl text-slate-600 max-w-2xl mb-12 leading-relaxed">
+          Specjalizujemy się w naprawie elektroniki wszystkich marek. Pęknięty ekran, martwa bateria czy uszkodzona płyta główna — diagnozujemy i naprawiamy skutecznie.
+        </p>
+        <a href="tel:504365205" class="bg-brand-primary text-white px-10 py-5 rounded-sm font-display font-bold text-lg inline-flex items-center gap-4 hover:bg-brand-secondary transition-all shadow-xl shadow-brand-primary/20">
+          → Zadzwoń: 504 365 205
+        </a>
+      </div>
+    </header>
+
+    <!-- WHAT WE FIX -->
+    <section class="py-32 bg-slate-50">
+      <div class="container-custom">
+        <div class="mb-20">
+          <span class="technical-label mb-4 block">Co naprawiamy</span>
+          <h2 class="text-4xl lg:text-6xl font-display font-bold text-brand-secondary">Serwis dla każdego urządzenia</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {devices.map(device => (
+            <div class="bg-white p-10 border border-slate-200 hover:border-brand-primary transition-colors group">
+              <div class="text-4xl mb-6">{device.icon}</div>
+              <h3 class="text-2xl font-display font-bold text-brand-secondary mb-6">{device.title}</h3>
+              <ul class="space-y-3">
+                {device.features.map(f => (
+                  <li class="flex items-start gap-3 text-slate-600 text-sm">
+                    <span class="text-brand-primary font-bold mt-0.5">/</span>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="py-32 border-y border-slate-200">
+      <div class="container-custom">
+        <div class="flex flex-col lg:flex-row gap-20">
+          <div class="lg:w-1/3">
+            <span class="technical-label mb-4 block">Jak działamy</span>
+            <h2 class="text-4xl lg:text-5xl font-display font-bold text-brand-secondary leading-tight">Naprawa w 4 prostych krokach</h2>
+          </div>
+          <div class="lg:w-2/3 grid sm:grid-cols-2 gap-12">
+            {steps.map(step => (
+              <div>
+                <span class="font-mono text-xs text-brand-primary font-bold uppercase tracking-widest mb-4 block">{step.label}</span>
+                <h4 class="text-xl font-display font-bold text-brand-secondary mb-4">{step.title}</h4>
+                <p class="text-slate-600 text-sm leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BRANDS -->
+    <section class="py-20 bg-white">
+      <div class="container-custom text-center">
+        <h3 class="technical-label text-slate-400 mb-10">Naprawiamy wszystkie marki</h3>
+        <p class="text-xl lg:text-3xl font-display font-bold text-brand-secondary opacity-40 leading-relaxed max-w-5xl mx-auto">
+          Apple · Samsung · Huawei · Xiaomi · Lenovo · HP · Dell · ASUS · Acer · Sony · LG · OnePlus · i wiele innych
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-32 bg-slate-50 border-t border-slate-200">
+      <div class="container-custom max-w-4xl">
+        <div class="text-center mb-20">
+          <span class="technical-label mb-4 block">Najczęstsze pytania</span>
+          <h2 class="text-4xl font-display font-bold text-brand-secondary">Masz pytania?</h2>
+        </div>
+        <div class="space-y-8">
+          {faqs.map(faq => (
+            <div class="bg-white p-8 border border-slate-200">
+              <h4 class="text-lg font-display font-bold text-brand-secondary mb-3">Q: {faq.q}</h4>
+              <p class="text-slate-600 leading-relaxed">A: {faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-32 bg-brand-secondary text-white text-center">
+      <div class="container-custom">
+        <h2 class="text-4xl lg:text-6xl font-display font-bold mb-8">Nie czekaj, aż uszkodzenie się pogłębi.</h2>
+        <p class="text-xl lg:text-2xl text-white/80 mb-12 max-w-3xl mx-auto">
+          Każde opóźnienie może oznaczać wyższy koszt naprawy. Zadzwoń dziś — diagnostyka jest bezpłatna.
+        </p>
+        <a href="tel:504365205" class="bg-brand-primary text-white px-12 py-6 rounded-sm font-display font-bold text-2xl inline-flex items-center gap-4 hover:bg-white hover:text-brand-primary transition-all shadow-2xl">
+          → 504 365 205
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

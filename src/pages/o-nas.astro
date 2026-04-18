@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const values = [
+  { title: 'Szybkość bez kompromisów', desc: 'Rozumiemy, że czas to pieniądz. Działamy sprawnie i dotrzymujemy terminów.' },
+  { title: 'Uczciwość i transparentność', desc: 'Wycena przed naprawą. Żadnych ukrytych kosztów. Żadnych zbędnych usług.' },
+  { title: 'Lokalność', desc: 'Jesteśmy stąd. Znamy potrzeby klientów z Tarnowa i okolic. Budujemy relacje.' },
+  { title: 'Ciągłe doskonalenie', desc: 'Technologia się zmienia — my też. Regularnie się szkolimy, by oferować to co najlepsze.' }
+];
+
+const partners = ['Apple', 'Samsung', 'Synology', 'Dahua', 'Hikvision', 'FIBARO', 'IPox', 'Dan-Tig Group'];
+---
+
+<Layout 
+  title="O nas | Centre Service IT Tarnów" 
+  description="Poznaj zespół Centre Service IT. Jesteśmy lokalnymi ekspertami od technologii i bezpieczeństwa w Tarnowie. Ponad 10 lat doświadczenia. Tel: 504 365 205."
+>
+  <Navbar />
+  
+  <main class="pt-20">
+    <!-- HERO -->
+    <header class="py-24 lg:py-40 bg-white border-b border-slate-200">
+      <div class="container-custom">
+        <span class="technical-label mb-6 block">Poznaj Centre Service IT</span>
+        <h1 class="text-5xl lg:text-8xl font-display font-bold text-brand-secondary leading-[0.9] mb-8 max-w-5xl">
+          Technologia, której możesz zaufać. <span class="text-brand-primary">Lokalnie.</span>
+        </h1>
+        <p class="text-xl lg:text-2xl text-slate-600 max-w-3xl mb-12 leading-relaxed">
+          Jesteśmy zespołem doświadczonych specjalistów IT z Tarnowa, pasjonujących się tym, co robimy. Pomagamy rozwiązywać problemy technologiczne — szybko, rzetelnie i bez zbędnego żargonu.
+        </p>
+      </div>
+    </header>
+
+    <!-- STORY -->
+    <section class="py-32 bg-slate-50 overflow-hidden">
+      <div class="container-custom">
+        <div class="grid lg:grid-cols-2 gap-24 items-center">
+           <div class="relative">
+              <div class="aspect-square bg-white border border-slate-200 shadow-2xl flex items-center justify-center p-20">
+                 <div class="technical-label text-[120px] font-black opacity-[0.05] absolute inset-0 flex items-center justify-center pointer-events-none">EST. 2014</div>
+                 <p class="text-3xl font-display font-bold text-brand-secondary text-center relative z-10 leading-tight">
+                   Ponad dekada wsparcia technologicznego w Małopolsce.
+                 </p>
+              </div>
+              <div class="absolute -bottom-10 -left-10 bg-brand-primary text-white p-10 shadow-xl max-w-xs">
+                 <p class="font-mono text-[10px] uppercase tracking-widest mb-4">Misja</p>
+                 <p class="font-display font-bold leading-relaxed italic">"Traktujemy każdego klienta jak człowieka z problemem, a nie numer zlecenia."</p>
+              </div>
+           </div>
+           <div>
+             <span class="technical-label mb-4 block">Nasza historia</span>
+             <h2 class="text-4xl lg:text-5xl font-display font-bold text-brand-secondary mb-8">Zaczęło się od pasji</h2>
+             <div class="space-y-6 text-slate-600 leading-relaxed text-lg">
+                <p>
+                  Centre Service IT powstało z potrzeby — potrzeby dostępu do rzetelnego, lokalnego serwisu elektroniki i usług IT, który traktuje każdego klienta indywidualnie.
+                </p>
+                <p>
+                  Przez lata rozwinęliśmy nasze usługi daleko poza naprawę telefonów. Dziś obsługujemy zarówno osoby prywatne, jak i firmy z całej Małopolsce — oferując monitoring, cyberbezpieczeństwo i inteligentne domy.
+                </p>
+                <p>
+                  Łączy nas jedno: podejście do klienta i jakości pracy. Naprawiamy, instalujemy i wdrażamy — ale przede wszystkim słuchamy i doradzamy.
+                </p>
+             </div>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="py-32 bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-20">
+          <span class="technical-label mb-4 block">Nasze wartości</span>
+          <h2 class="text-4xl lg:text-6xl font-display font-bold text-brand-secondary">Co nas wyróżnia?</h2>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-slate-200 border border-slate-200">
+          {values.map(v => (
+            <div class="bg-white p-12 hover:bg-slate-50 transition-colors">
+              <h4 class="text-xl font-display font-bold text-brand-secondary mb-6">{v.title}</h4>
+              <p class="text-slate-600 text-sm leading-relaxed">{v.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTNERS -->
+    <section class="py-24 bg-slate-50 border-t border-slate-200">
+      <div class="container-custom">
+        <h3 class="technical-label text-center text-slate-400 mb-12">Zaufane marki i partnerzy</h3>
+        <div class="flex flex-wrap justify-center gap-x-12 gap-y-8 grayscale opacity-40">
+           {partners.map(p => (
+             <span class="font-display font-black text-2xl lg:text-4xl tracking-tighter text-slate-900">{p}</span>
+           ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-32 bg-brand-primary text-white text-center">
+      <div class="container-custom">
+        <h2 class="text-4xl lg:text-7xl font-display font-bold mb-8">Chcesz nas poznać lepiej?</h2>
+        <p class="text-xl lg:text-2xl text-white/80 mb-12">Masz pytanie lub chcesz zamówić usługę? Zadzwoń bezpośrednio.</p>
+        <a href="tel:504365205" class="bg-white text-brand-primary px-12 py-6 rounded-sm font-display font-bold text-2xl hover:bg-brand-secondary hover:text-white transition-all shadow-2xl">
+          → 504 365 205
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

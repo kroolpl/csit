@@ -1,0 +1,128 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const services = [
+  {
+    title: 'Strony internetowe i marketing',
+    icon: '🌐',
+    desc: 'Strony i sklepy e-commerce, SEO, kampanie Google/Meta Ads oraz identyfikacja wizualna.',
+    points: ['Modern Design & UX', 'Search Engine Optimization', 'Social Media Management']
+  },
+  {
+    title: 'Druk 3D i Prototypowanie',
+    icon: '🖨️',
+    desc: 'Profesjonalne usługi druku 3D dla firm i hobbystów — od projektu po gotowy model.',
+    points: ['Prototypy techniczne', 'Części zamienne', 'Modele architektoniczne']
+  },
+  {
+    title: 'Chmura i serwery NAS',
+    icon: '☁️',
+    desc: 'Konfiguracja bezpiecznych rozwiązań do przechowywania i synchronizacji danych.',
+    points: ['Synology Specialists', 'Data Migration', 'Cloud Backup Integration']
+  },
+  {
+    title: 'Analizy statystyczne',
+    icon: '📊',
+    desc: 'Profesjonalne analizy danych dla studentów i badaczy (SPSS, R, Excel).',
+    points: ['Prace magisterskie', 'Badania rynkowe', 'Wizualizacja danych']
+  }
+];
+---
+
+<Layout 
+  title="Usługi IT, Strony WWW i Druk 3D | Tarnów" 
+  description="Strony internetowe, marketing online, druk 3D i analizy statystyczne w Centre Service IT Tarnów. Twój partner w technologii. Tel: 504 365 205."
+>
+  <Navbar />
+  
+  <main class="pt-20">
+    <!-- HERO -->
+    <header class="py-24 lg:py-40 bg-white border-b border-slate-200">
+      <div class="container-custom">
+        <span class="technical-label mb-6 block">Strony internetowe · Druk 3D · Chmura · Marketing</span>
+        <h1 class="text-5xl lg:text-8xl font-display font-bold text-brand-secondary leading-[0.9] mb-8 max-w-5xl">
+          Kompleksowe wsparcie <span class="text-brand-primary">technologiczne.</span>
+        </h1>
+        <p class="text-xl lg:text-2xl text-slate-600 max-w-2xl mb-12 leading-relaxed">
+          Od nowoczesnej strony internetowej po druk 3D i analizę danych — Centre Service IT to Twój partner technologiczny w jednym miejscu.
+        </p>
+        <a href="tel:504365205" class="bg-brand-primary text-white px-10 py-5 rounded-sm font-display font-bold text-lg inline-flex items-center gap-4 hover:bg-brand-secondary transition-all shadow-xl">
+          → Zadzwoń: 504 365 205
+        </a>
+      </div>
+    </header>
+
+    <!-- SERVICES GRID -->
+    <section class="py-32 bg-slate-50">
+      <div class="container-custom">
+        <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-2xl">
+          {services.map(s => (
+            <div class="bg-white p-12 lg:p-16 hover:bg-slate-50 transition-colors flex flex-col justify-between">
+              <div>
+                <div class="text-5xl mb-8">{s.icon}</div>
+                <h3 class="text-3xl font-display font-bold text-brand-secondary mb-6">{s.title}</h3>
+                <p class="text-slate-600 mb-10 leading-relaxed text-lg">{s.desc}</p>
+              </div>
+              <ul class="space-y-3">
+                {s.points.map(p => (
+                  <li class="flex items-center gap-3 text-xs font-mono uppercase tracking-widest text-brand-primary font-bold">
+                    <span class="w-2 h-[1px] bg-brand-primary"></span>
+                    {p}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 3D PRINT DETAIL -->
+    <section class="py-32 bg-white overflow-hidden">
+      <div class="container-custom">
+        <div class="flex flex-col lg:flex-row gap-24 items-center">
+           <div class="lg:w-1/2">
+             <span class="technical-label mb-4 block">Druk 3D</span>
+             <h2 class="text-4xl lg:text-6xl font-display font-bold text-brand-secondary mb-8 leading-tight">Twoje pomysły w trójwymiarze</h2>
+             <p class="text-xl text-slate-600 mb-8 leading-relaxed">
+               Oferujemy profesjonalne usługi projektowania i druku 3D dla firm, konstruktorów i twórców. Od prototypu po gotowy produkt.
+             </p>
+             <div class="bg-slate-50 p-8 border-l-4 border-brand-primary">
+                <p class="text-brand-secondary font-display font-bold italic">
+                  "Przynosisz pomysł lub plik — my drukujemy gotowy element. Możemy też zaprojektować model od podstaw."
+                </p>
+             </div>
+           </div>
+           <div class="lg:w-1/2 relative">
+              <div class="aspect-video bg-slate-100 border border-slate-200 flex items-center justify-center">
+                 <div class="technical-label text-slate-300">3D Simulation View</div>
+              </div>
+              <div class="absolute -bottom-6 -right-6 bg-brand-secondary text-white p-6 shadow-xl">
+                 <span class="font-mono text-[10px] uppercase tracking-[0.2em] block mb-2">Technologia</span>
+                 <p class="font-display font-bold">FDM & SLA Printing</p>
+              </div>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WEB CTA -->
+    <section class="py-32 bg-brand-secondary text-white">
+      <div class="container-custom">
+        <div class="flex flex-col lg:flex-row gap-20 items-center">
+          <div class="flex-1">
+             <h2 class="text-4xl lg:text-6xl font-display font-bold mb-6">Twoja firma w internecie — widoczna i skuteczna</h2>
+             <p class="text-xl text-white/70 mb-0">Dobra strona internetowa to nie koszt — to inwestycja, która pracuje dla Ciebie 24 godziny na dobę.</p>
+          </div>
+          <a href="tel:504365205" class="bg-brand-primary text-white px-12 py-6 rounded-sm font-display font-bold text-2xl hover:bg-white hover:text-brand-primary transition-all flex-shrink-0">
+             Start Your Project →
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

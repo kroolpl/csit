@@ -1,0 +1,43 @@
+---
+import MobileMenu from './MobileMenu.tsx';
+
+const navItems = [
+  { label: 'Serwis Elektroniki', href: '/serwis-elektroniki' },
+  { label: 'Odzyskiwanie Danych', href: '/odzyskiwanie-danych' },
+  { label: 'Monitoring & Alarmy', href: '/monitoring-alarmy' },
+  { label: 'Automatyka', href: '/automatyka-smart-home' },
+  { label: 'Kontakt', href: '/kontakt' },
+];
+---
+
+<nav class="fixed top-0 left-0 w-full z-[100] bg-white/80 backdrop-blur-md border-b border-slate-200" transition:persist>
+  <div class="container-custom h-20 flex items-center justify-between">
+    <a href="/" class="group flex items-center gap-3">
+      <div class="flex items-center font-mono font-bold text-xl tracking-tighter">
+        <span class="text-brand-secondary group-hover:text-brand-primary transition-colors">[CSIT]</span>
+        <span class="w-[0.6em] h-[1.2em] bg-brand-primary ml-1 animate-pulse"></span>
+      </div>
+      <div class="hidden sm:flex flex-col leading-tight border-l border-slate-200 pl-3">
+        <span class="technical-label">Technologia & Bezpieczeństwo</span>
+        <span class="text-[8px] font-mono text-slate-400 uppercase tracking-widest">Tarnów, PL</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden lg:flex items-center gap-8">
+      {navItems.map(item => (
+        <a href={item.href} class="text-sm font-medium text-slate-600 hover:text-brand-primary transition-colors">
+          {item.label}
+        </a>
+      ))}
+      <a href="tel:504365205" class="bg-brand-primary text-white px-6 py-2.5 rounded-sm font-display font-bold text-sm tracking-wide hover:bg-brand-secondary transition-all shadow-lg shadow-brand-primary/20">
+        504 365 205
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button & Sheet -->
+    <div class="lg:hidden flex items-center">
+      <MobileMenu client:load />
+    </div>
+  </div>
+</nav>
