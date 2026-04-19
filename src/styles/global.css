@@ -32,4 +32,8 @@
   .container-custom {
     @apply max-w-7xl mx-auto px-6 lg:px-12;
   }
+
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
 }

@@ -39,31 +39,31 @@ const services = [
   
   <main class="pt-20">
     <!-- HERO -->
-    <header class="py-24 lg:py-40 bg-white border-b border-slate-200">
+    <header class="py-16 lg:py-40 bg-white border-b border-slate-200">
       <div class="container-custom">
         <span class="technical-label mb-6 block">Strony internetowe · Druk 3D · Chmura · Marketing</span>
-        <h1 class="text-5xl lg:text-8xl font-display font-bold text-brand-secondary leading-[0.9] mb-8 max-w-5xl">
+        <h1 class="text-4xl sm:text-5xl lg:text-8xl font-display font-bold text-brand-secondary leading-[1.1] lg:leading-[0.9] mb-8 max-w-5xl">
           Kompleksowe wsparcie <span class="text-brand-primary">technologiczne.</span>
         </h1>
         <p class="text-xl lg:text-2xl text-slate-600 max-w-2xl mb-12 leading-relaxed">
           Od nowoczesnej strony internetowej po druk 3D i analizę danych — Centre Service IT to Twój partner technologiczny w jednym miejscu.
         </p>
-        <a href="tel:504365205" class="bg-brand-primary text-white px-10 py-5 rounded-sm font-display font-bold text-lg inline-flex items-center gap-4 hover:bg-brand-secondary transition-all shadow-xl">
+        <a href="tel:504365205" class="bg-brand-primary text-white px-8 lg:px-10 py-4 lg:py-5 rounded-sm font-display font-bold text-base lg:text-lg inline-flex items-center gap-4 hover:bg-brand-secondary transition-all shadow-xl">
           → Zadzwoń: 504 365 205
         </a>
       </div>
     </header>
 
     <!-- SERVICES GRID -->
-    <section class="py-32 bg-slate-50">
+    <section class="section-padding bg-slate-50">
       <div class="container-custom">
         <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-2xl">
           {services.map(s => (
-            <div class="bg-white p-12 lg:p-16 hover:bg-slate-50 transition-colors flex flex-col justify-between">
+            <div class="bg-white p-8 lg:p-16 hover:bg-slate-50 transition-colors flex flex-col justify-between">
               <div>
-                <div class="text-5xl mb-8">{s.icon}</div>
-                <h3 class="text-3xl font-display font-bold text-brand-secondary mb-6">{s.title}</h3>
-                <p class="text-slate-600 mb-10 leading-relaxed text-lg">{s.desc}</p>
+                <div class="text-4xl lg:text-5xl mb-6 lg:mb-8">{s.icon}</div>
+                <h3 class="text-2xl lg:text-3xl font-display font-bold text-brand-secondary mb-4 lg:mb-6">{s.title}</h3>
+                <p class="text-slate-600 mb-8 lg:mb-10 leading-relaxed text-base lg:text-lg">{s.desc}</p>
               </div>
               <ul class="space-y-3">
                 {s.points.map(p => (
@@ -80,12 +80,12 @@ const services = [
     </section>
 
     <!-- 3D PRINT DETAIL -->
-    <section class="py-32 bg-white overflow-hidden">
+    <section class="section-padding bg-white overflow-hidden">
       <div class="container-custom">
         <div class="flex flex-col lg:flex-row gap-24 items-center">
            <div class="lg:w-1/2">
              <span class="technical-label mb-4 block">Druk 3D</span>
-             <h2 class="text-4xl lg:text-6xl font-display font-bold text-brand-secondary mb-8 leading-tight">Twoje pomysły w trójwymiarze</h2>
+             <h2 class="text-3xl lg:text-6xl font-display font-bold text-brand-secondary mb-6 lg:mb-8 leading-tight">Twoje pomysły w trójwymiarze</h2>
              <p class="text-xl text-slate-600 mb-8 leading-relaxed">
                Oferujemy profesjonalne usługi projektowania i druku 3D dla firm, konstruktorów i twórców. Od prototypu po gotowy produkt.
              </p>
@@ -99,9 +99,9 @@ const services = [
               <div class="aspect-video bg-slate-100 border border-slate-200 flex items-center justify-center">
                  <div class="technical-label text-slate-300">3D Simulation View</div>
               </div>
-              <div class="absolute -bottom-6 -right-6 bg-brand-secondary text-white p-6 shadow-xl">
-                 <span class="font-mono text-[10px] uppercase tracking-[0.2em] block mb-2">Technologia</span>
-                 <p class="font-display font-bold">FDM & SLA Printing</p>
+              <div class="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 bg-brand-secondary text-white p-5 lg:p-6 shadow-xl max-w-[180px] lg:max-w-none">
+                 <span class="font-mono text-[9px] lg:text-[10px] uppercase tracking-[0.2em] block mb-2">Technologia</span>
+                 <p class="font-display font-bold text-sm lg:text-base">FDM & SLA Printing</p>
               </div>
            </div>
         </div>
@@ -109,14 +109,14 @@ const services = [
     </section>
 
     <!-- WEB CTA -->
-    <section class="py-32 bg-brand-secondary text-white">
+    <section class="section-padding bg-brand-secondary text-white">
       <div class="container-custom">
         <div class="flex flex-col lg:flex-row gap-20 items-center">
           <div class="flex-1">
-             <h2 class="text-4xl lg:text-6xl font-display font-bold mb-6">Twoja firma w internecie — widoczna i skuteczna</h2>
-             <p class="text-xl text-white/70 mb-0">Dobra strona internetowa to nie koszt — to inwestycja, która pracuje dla Ciebie 24 godziny na dobę.</p>
+             <h2 class="text-3xl lg:text-6xl font-display font-bold mb-6">Twoja firma w internecie — widoczna i skuteczna</h2>
+             <p class="text-lg lg:text-xl text-white/70 mb-0">Dobra strona internetowa to nie koszt — to inwestycja, która pracuje dla Ciebie 24 godziny na dobę.</p>
           </div>
-          <a href="tel:504365205" class="bg-brand-primary text-white px-12 py-6 rounded-sm font-display font-bold text-2xl hover:bg-white hover:text-brand-primary transition-all flex-shrink-0">
+          <a href="tel:504365205" class="bg-brand-primary text-white px-8 lg:px-12 py-4 lg:py-6 rounded-sm font-display font-bold text-xl lg:text-2xl hover:bg-white hover:text-brand-primary transition-all flex-shrink-0">
              Start Your Project →
           </a>
         </div>

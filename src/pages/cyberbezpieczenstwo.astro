@@ -26,16 +26,16 @@ const cyberServices = [
   
   <main class="pt-20">
     <!-- HERO -->
-    <header class="py-24 lg:py-40 bg-white relative overflow-hidden">
+    <header class="py-16 lg:py-40 bg-white relative overflow-hidden">
       <div class="container-custom relative z-10">
         <span class="technical-label mb-6 block">Ochrona firm i sieci w Małopolsce</span>
-        <h1 class="text-5xl lg:text-8xl font-display font-bold text-brand-secondary leading-[0.9] mb-8 max-w-4xl">
+        <h1 class="text-4xl sm:text-5xl lg:text-8xl font-display font-bold text-brand-secondary leading-[1.1] lg:leading-[0.9] mb-8 max-w-4xl">
           Hakerzy nie śpią.<br/><span class="text-brand-primary">Twoja firma nie powinna być łatwym celem.</span>
         </h1>
         <p class="text-xl lg:text-2xl text-slate-600 max-w-2xl mb-12 leading-relaxed">
           Ataki ransomware, phishing i wycieki danych to realne zagrożenia. Oferujemy profesjonalne zabezpieczenia, które realnie chronią Twój biznes.
         </p>
-        <a href="tel:504365205" class="bg-brand-primary text-white px-10 py-5 rounded-sm font-display font-bold text-lg inline-flex items-center gap-4 hover:bg-brand-secondary transition-all shadow-xl">
+        <a href="tel:504365205" class="bg-brand-primary text-white px-8 lg:px-10 py-4 lg:py-5 rounded-sm font-display font-bold text-base lg:text-lg inline-flex items-center gap-4 hover:bg-brand-secondary transition-all shadow-xl">
           → Umów audyt bezpieczeństwa
         </a>
       </div>
@@ -46,17 +46,17 @@ const cyberServices = [
     </header>
 
     <!-- THREATS -->
-    <section class="py-32 bg-slate-900 text-white">
+    <section class="section-padding bg-slate-900 text-white">
       <div class="container-custom">
-        <div class="mb-20 text-center">
+        <div class="mb-12 lg:mb-20 text-center">
           <span class="technical-label text-brand-primary mb-4 block">Znasz te zagrożenia?</span>
-          <h2 class="text-4xl lg:text-6xl font-display font-bold">Twoja firma jest narażona codziennie</h2>
+          <h2 class="text-3xl lg:text-6xl font-display font-bold">Twoja firma jest narażona codziennie</h2>
         </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {threats.map(t => (
-            <div class="p-10 border border-white/10 bg-white/5 hover:border-brand-primary transition-colors">
-              <h4 class="text-xl font-display font-bold mb-4">{t.title}</h4>
-              <p class="text-white/60 text-sm leading-relaxed">{t.desc}</p>
+            <div class="p-8 lg:p-10 border border-white/10 bg-white/5 hover:border-brand-primary transition-colors">
+              <h4 class="text-lg lg:text-xl font-display font-bold mb-4">{t.title}</h4>
+              <p class="text-white/60 text-xs lg:text-sm leading-relaxed">{t.desc}</p>
             </div>
           ))}
         </div>
@@ -64,18 +64,18 @@ const cyberServices = [
     </section>
 
     <!-- SERVICES -->
-    <section class="py-32 bg-white">
+    <section class="section-padding bg-white">
       <div class="container-custom">
-        <div class="mb-20">
+        <div class="mb-12 lg:mb-20">
           <span class="technical-label mb-4 block">Jak Cię chronimy</span>
-          <h2 class="text-4xl lg:text-6xl font-display font-bold text-brand-secondary leading-tight">Kompleksowe cyberbezpieczeństwo</h2>
+          <h2 class="text-3xl lg:text-6xl font-display font-bold text-brand-secondary leading-tight">Kompleksowe cyberbezpieczeństwo</h2>
         </div>
         <div class="grid md:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
           {cyberServices.map(s => (
-            <div class="bg-white p-12 hover:bg-slate-50 transition-colors">
-              <h3 class="text-2xl font-display font-bold text-brand-secondary mb-6">{s.title}</h3>
-              <p class="text-slate-600 leading-relaxed mb-8">{s.desc}</p>
-              <div class="w-12 h-1 bg-brand-primary"></div>
+            <div class="bg-white p-8 lg:p-12 hover:bg-slate-50 transition-colors">
+              <h3 class="text-xl lg:text-2xl font-display font-bold text-brand-secondary mb-4 lg:mb-6">{s.title}</h3>
+              <p class="text-sm lg:text-base text-slate-600 leading-relaxed mb-6 lg:mb-8">{s.desc}</p>
+              <div class="w-10 lg:w-12 h-1 bg-brand-primary"></div>
             </div>
           ))}
         </div>
@@ -83,12 +83,12 @@ const cyberServices = [
     </section>
 
     <!-- NAS & BACKUP -->
-    <section class="py-32 bg-slate-50 border-y border-slate-200">
+    <section class="section-padding bg-slate-50 border-y border-slate-200">
       <div class="container-custom">
         <div class="flex flex-col lg:flex-row gap-20 items-center">
           <div class="lg:w-1/2">
              <span class="technical-label mb-4 block">Serwery NAS i kopie zapasowe</span>
-             <h2 class="text-4xl lg:text-5xl font-display font-bold text-brand-secondary mb-8">Twoje dane muszą mieć kopię. Zawsze.</h2>
+             <h2 class="text-3xl lg:text-5xl font-display font-bold text-brand-secondary mb-6 lg:mb-8">Twoje dane muszą mieć kopię. Zawsze.</h2>
              <p class="text-xl text-slate-600 mb-8 leading-relaxed">
                Wdrażamy serwery NAS (m.in. Synology) i rozwiązania chmurowe, które automatycznie tworzą kopie zapasowe Twoich danych.
              </p>
@@ -122,11 +122,11 @@ const cyberServices = [
     </section>
 
     <!-- CTA -->
-    <section class="py-32 bg-brand-primary text-white text-center">
+    <section class="section-padding bg-brand-primary text-white text-center">
       <div class="container-custom">
-        <h2 class="text-4xl lg:text-7xl font-display font-bold mb-8">Nie czekaj na incydent.</h2>
-        <p class="text-xl lg:text-2xl text-white/80 mb-12">Bezpłatny wstępny audyt bezpieczeństwa — zadzwoń i umów wizytę.</p>
-        <a href="tel:504365205" class="bg-white text-brand-primary px-12 py-6 rounded-sm font-display font-bold text-2xl inline-flex items-center gap-4 hover:bg-brand-secondary hover:text-white transition-all shadow-2xl">
+        <h2 class="text-3xl lg:text-7xl font-display font-bold mb-8">Nie czekaj na incydent.</h2>
+        <p class="text-lg lg:text-2xl text-white/80 mb-12">Bezpłatny wstępny audyt bezpieczeństwa — zadzwoń i umów wizytę.</p>
+        <a href="tel:504365205" class="bg-white text-brand-primary px-8 lg:px-12 py-5 lg:py-6 rounded-sm font-display font-bold text-xl lg:text-2xl inline-flex items-center gap-4 hover:bg-brand-secondary hover:text-white transition-all shadow-2xl">
           → 504 365 205
         </a>
       </div>

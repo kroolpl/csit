@@ -21,10 +21,10 @@ const partners = ['Apple', 'Samsung', 'Synology', 'Dahua', 'Hikvision', 'FIBARO'
   
   <main class="pt-20">
     <!-- HERO -->
-    <header class="py-24 lg:py-40 bg-white border-b border-slate-200">
+    <header class="py-16 lg:py-40 bg-white border-b border-slate-200">
       <div class="container-custom">
         <span class="technical-label mb-6 block">Poznaj Centre Service IT</span>
-        <h1 class="text-5xl lg:text-8xl font-display font-bold text-brand-secondary leading-[0.9] mb-8 max-w-5xl">
+        <h1 class="text-4xl sm:text-5xl lg:text-8xl font-display font-bold text-brand-secondary leading-[1.1] lg:leading-[0.9] mb-8 max-w-5xl">
           Technologia, której możesz zaufać. <span class="text-brand-primary">Lokalnie.</span>
         </h1>
         <p class="text-xl lg:text-2xl text-slate-600 max-w-3xl mb-12 leading-relaxed">
@@ -34,7 +34,7 @@ const partners = ['Apple', 'Samsung', 'Synology', 'Dahua', 'Hikvision', 'FIBARO'
     </header>
 
     <!-- STORY -->
-    <section class="py-32 bg-slate-50 overflow-hidden">
+    <section class="section-padding bg-slate-50 overflow-hidden">
       <div class="container-custom">
         <div class="grid lg:grid-cols-2 gap-24 items-center">
            <div class="relative">
@@ -69,16 +69,16 @@ const partners = ['Apple', 'Samsung', 'Synology', 'Dahua', 'Hikvision', 'FIBARO'
     </section>
 
     <!-- VALUES -->
-    <section class="py-32 bg-white">
+    <section class="section-padding bg-white">
       <div class="container-custom">
         <div class="text-center mb-20">
           <span class="technical-label mb-4 block">Nasze wartości</span>
-          <h2 class="text-4xl lg:text-6xl font-display font-bold text-brand-secondary">Co nas wyróżnia?</h2>
+          <h2 class="text-3xl lg:text-6xl font-display font-bold text-brand-secondary">Co nas wyróżnia?</h2>
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-slate-200 border border-slate-200">
           {values.map(v => (
-            <div class="bg-white p-12 hover:bg-slate-50 transition-colors">
-              <h4 class="text-xl font-display font-bold text-brand-secondary mb-6">{v.title}</h4>
+            <div class="bg-white p-8 lg:p-12 hover:bg-slate-50 transition-colors">
+              <h4 class="text-lg lg:text-xl font-display font-bold text-brand-secondary mb-4 lg:mb-6">{v.title}</h4>
               <p class="text-slate-600 text-sm leading-relaxed">{v.desc}</p>
             </div>
           ))}
@@ -99,11 +99,11 @@ const partners = ['Apple', 'Samsung', 'Synology', 'Dahua', 'Hikvision', 'FIBARO'
     </section>
 
     <!-- CTA -->
-    <section class="py-32 bg-brand-primary text-white text-center">
+    <section class="section-padding bg-brand-primary text-white text-center">
       <div class="container-custom">
-        <h2 class="text-4xl lg:text-7xl font-display font-bold mb-8">Chcesz nas poznać lepiej?</h2>
-        <p class="text-xl lg:text-2xl text-white/80 mb-12">Masz pytanie lub chcesz zamówić usługę? Zadzwoń bezpośrednio.</p>
-        <a href="tel:504365205" class="bg-white text-brand-primary px-12 py-6 rounded-sm font-display font-bold text-2xl hover:bg-brand-secondary hover:text-white transition-all shadow-2xl">
+        <h2 class="text-3xl lg:text-7xl font-display font-bold mb-6 lg:mb-8">Chcesz nas poznać lepiej?</h2>
+        <p class="text-lg lg:text-2xl text-white/80 mb-10 lg:mb-12">Masz pytanie lub chcesz zamówić usługę? Zadzwoń bezpośrednio.</p>
+        <a href="tel:504365205" class="bg-white text-brand-primary px-8 lg:px-12 py-5 lg:py-6 rounded-sm font-display font-bold text-xl lg:text-2xl hover:bg-brand-secondary hover:text-white transition-all shadow-2xl">
           → 504 365 205
         </a>
       </div>

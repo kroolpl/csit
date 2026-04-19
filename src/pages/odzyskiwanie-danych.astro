@@ -25,19 +25,19 @@ const dataTypes = [
   
   <main class="pt-20">
     <!-- HERO -->
-    <header class="py-24 lg:py-32 bg-white relative overflow-hidden">
+    <header class="py-16 lg:py-32 bg-white relative overflow-hidden">
       <div class="absolute top-0 right-0 w-1/3 h-full bg-slate-50 -skew-x-12 translate-x-1/2"></div>
       <div class="container-custom relative">
         <div class="max-w-4xl">
           <span class="technical-label mb-6 block">Dyski twarde · SSD · Pendrive · Karty pamięci</span>
-          <h1 class="text-5xl lg:text-8xl font-display font-bold text-brand-secondary leading-[0.9] mb-8">
-            Twoje dane nie są stracone. <span class="text-brand-primary block">Jeszcze nie.</span>
+          <h1 class="text-4xl sm:text-5xl lg:text-8xl font-display font-bold text-brand-secondary leading-[1.1] lg:leading-[0.9] mb-8">
+            Twoje dane nie są stracone. <span class="text-brand-primary block sm:inline lg:block">Jeszcze nie.</span>
           </h1>
           <p class="text-xl lg:text-2xl text-slate-600 max-w-2xl mb-12 leading-relaxed">
             Odzyskujemy pliki z uszkodzonych, sformatowanych i niedziałających nośników. Działamy szybko, skutecznie i z zachowaniem pełnej poufności.
           </p>
           <div class="flex flex-col sm:flex-row gap-6 items-center">
-            <a href="tel:504365205" class="bg-brand-primary text-white px-10 py-5 rounded-sm font-display font-bold text-lg inline-flex items-center gap-4 hover:bg-brand-secondary transition-all shadow-xl">
+            <a href="tel:504365205" class="bg-brand-primary text-white px-8 lg:px-10 py-4 lg:py-5 rounded-sm font-display font-bold text-base lg:text-lg inline-flex items-center gap-4 hover:bg-brand-secondary transition-all shadow-xl">
               → Zadzwoń: 504 365 205
             </a>
             <p class="text-sm font-mono text-slate-400 max-w-[200px] leading-tight uppercase tracking-wider">
@@ -49,19 +49,19 @@ const dataTypes = [
     </header>
 
     <!-- SOURCES -->
-    <section class="py-32 bg-slate-900 text-white">
+    <section class="section-padding bg-slate-900 text-white">
       <div class="container-custom">
-        <div class="mb-20">
+        <div class="mb-12 lg:mb-20">
           <span class="technical-label text-brand-primary mb-4 block">Skąd odzyskujemy dane</span>
-          <h2 class="text-4xl lg:text-6xl font-display font-bold">Odzyskujemy z każdego nośnika</h2>
+          <h2 class="text-3xl lg:text-6xl font-display font-bold">Odzyskujemy z każdego nośnika</h2>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 overflow-hidden">
           {sources.map(s => (
-            <div class="bg-slate-900 p-12 hover:bg-white/5 transition-colors">
-              <span class="font-mono text-xs text-brand-primary mb-6 block tracking-widest">{s.id}</span>
-              <h3 class="text-2xl font-display font-bold mb-4">{s.title}</h3>
-              <p class="text-white/60 text-sm leading-relaxed">{s.desc}</p>
+            <div class="bg-slate-900 p-8 lg:p-12 hover:bg-white/5 transition-colors">
+              <span class="font-mono text-[10px] lg:text-xs text-brand-primary mb-4 lg:mb-6 block tracking-widest">{s.id}</span>
+              <h3 class="text-xl lg:text-2xl font-display font-bold mb-4">{s.title}</h3>
+              <p class="text-white/60 text-xs lg:text-sm leading-relaxed">{s.desc}</p>
             </div>
           ))}
           <div class="bg-brand-primary p-12 flex flex-col justify-center">
@@ -80,10 +80,10 @@ const dataTypes = [
     </section>
 
     <!-- CAUSES -->
-    <section class="py-32 bg-white">
+    <section class="section-padding bg-white">
       <div class="container-custom">
-        <div class="max-w-3xl mx-auto text-center mb-20">
-          <h2 class="text-4xl lg:text-5xl font-display font-bold text-brand-secondary mb-6">Utrata danych może zdarzyć się każdemu</h2>
+        <div class="max-w-3xl mx-auto text-center mb-12 lg:mb-20">
+          <h2 class="text-3xl lg:text-5xl font-display font-bold text-brand-secondary mb-6">Utrata danych może zdarzyć się każdemu</h2>
           <p class="text-slate-600">Nie jesteś sam — większość przypadków wynika z awarii mechanicznych, zalania lub przypadkowego skasowania.</p>
         </div>
         <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
@@ -120,7 +120,7 @@ const dataTypes = [
     </section>
 
     <!-- TRUST & SECURITY -->
-    <section class="py-32 bg-slate-50 border-y border-slate-200">
+    <section class="section-padding bg-slate-50 border-y border-slate-200">
       <div class="container-custom text-center max-w-3xl">
         <h2 class="text-3xl lg:text-4xl font-display font-bold text-brand-secondary mb-8">Poufność Twoich danych jest priorytetem</h2>
         <p class="text-slate-600 mb-12 leading-relaxed">
@@ -135,10 +135,10 @@ const dataTypes = [
     </section>
 
     <!-- CTA -->
-    <section class="py-32 bg-brand-primary text-white text-center">
+    <section class="section-padding bg-brand-primary text-white text-center">
       <div class="container-custom">
-        <h2 class="text-4xl lg:text-7xl font-display font-bold mb-8 leading-tight">Nie kasuj. Nie formatuj.<br/><span class="text-brand-secondary">Zadzwoń najpierw.</span></h2>
-        <a href="tel:504365205" class="bg-white text-brand-primary px-12 py-6 rounded-sm font-display font-bold text-2xl inline-flex items-center gap-4 hover:bg-brand-secondary hover:text-white transition-all shadow-2xl">
+        <h2 class="text-3xl lg:text-7xl font-display font-bold mb-8 leading-tight">Nie kasuj. Nie formatuj.<br/><span class="text-brand-secondary">Zadzwoń najpierw.</span></h2>
+        <a href="tel:504365205" class="bg-white text-brand-primary px-8 lg:px-12 py-5 lg:py-6 rounded-sm font-display font-bold text-xl lg:text-2xl inline-flex items-center gap-4 hover:bg-brand-secondary hover:text-white transition-all shadow-2xl">
           → 504 365 205
         </a>
       </div>
