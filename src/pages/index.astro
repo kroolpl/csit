@@ -73,89 +73,90 @@ const features = [
 	
 	<main class="pt-20">
 		<!-- HERO SECTION -->
-		<section class="relative overflow-hidden bg-slate-50 text-slate-900 pt-12 pb-20 lg:pt-0 lg:pb-0 lg:min-h-[90vh] flex items-center border-b border-slate-200">
-      <!-- Sophisticated grid pattern -->
-      <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#0047ff 1px, transparent 1px), linear-gradient(90deg, #0047ff 1px, transparent 1px); background-size: 40px 40px;"></div>
-      
-      <!-- Soft blue glow -->
-      <div class="absolute top-1/4 right-0 w-1/2 h-1/2 bg-[radial-gradient(circle,rgba(0,71,255,0.08),transparent_70%)] pointer-events-none"></div>
+		<section class="relative bg-slate-50 pt-24 pb-32 lg:pt-32 lg:pb-40 border-b border-slate-200 overflow-hidden">
+      <!-- Subtle background grid -->
+      <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#0047ff 1px, transparent 1px), linear-gradient(90deg, #0047ff 1px, transparent 1px); background-size: 32px 32px;"></div>
 
-			<div class="container-custom relative w-full py-16 lg:py-0">
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <!-- Left: Text Content -->
-          <div>
-            <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-primary/10 rounded-full border border-brand-primary/20 mb-8">
-              <span class="w-1.5 h-1.5 bg-brand-primary rounded-full animate-pulse"></span>
-              <span class="font-mono text-[9px] uppercase tracking-widest text-brand-primary font-bold">Tarnów i Małopolska — lokalnie, szybko, z gwarancją</span>
-            </div>
+      <div class="container-custom relative z-10">
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Text Content (Left, span 7) -->
+          <div class="lg:col-span-7">
+            <span class="technical-label with-cursor mb-6 block">Tarnów i Małopolska</span>
             
-            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-black leading-[1.05] text-slate-900 mb-8 tracking-tighter">
-              Twoja elektronika <span class="text-brand-primary">znowu działa.</span><br/>
-              Twoje dane są <span class="text-brand-primary">bezpieczne.</span><br/>
-              Twoja firma jest <span class="text-brand-primary">chroniona.</span>
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-display font-black text-slate-900 leading-[1.1] mb-8 tracking-tight">
+              Profesjonalne IT.<br/>
+              <span class="text-brand-primary">Bez kompromisów.</span>
             </h1>
             
-            <p class="text-lg lg:text-xl text-slate-500 mb-12 max-w-2xl leading-relaxed">
-              Centre Service IT to kompleksowy serwis elektroniki, odzyskiwanie danych i profesjonalne systemy bezpieczeństwa dla klientów indywidualnych i firm w Tarnowie i całej Małopolsce.
+            <p class="text-lg lg:text-xl text-slate-600 mb-10 max-w-2xl leading-relaxed">
+              Zapewniamy ciągłość działania Twojej firmy i spokój w domu. Od błyskawicznej naprawy elektroniki, przez odzyskiwanie danych, po zaawansowane systemy bezpieczeństwa.
             </p>
-            
-            <div class="flex flex-col sm:flex-row gap-5">
-              <a href="tel:504365205" class="group bg-brand-primary text-white px-8 py-5 rounded-sm font-display font-bold text-base inline-flex items-center justify-center gap-3 hover:bg-brand-secondary transition-all shadow-2xl shadow-brand-primary/20">
-                → Zadzwoń teraz: 504 365 205
+
+            <div class="flex flex-col sm:flex-row gap-4 mb-16">
+              <a href="tel:504365205" class="bg-brand-primary text-white px-8 py-4 rounded-sm font-display font-bold text-base flex items-center justify-center gap-3 hover:bg-brand-secondary transition-colors shadow-xl shadow-brand-primary/20">
+                → Zadzwoń: 504 365 205
               </a>
-              <a href="#uslugi" class="px-8 py-5 rounded-sm font-display font-bold text-base inline-flex items-center justify-center gap-3 border-2 border-slate-200 text-slate-900 hover:border-brand-primary hover:text-brand-primary transition-all">
-                → Zobacz nasze usługi
+              <a href="#uslugi" class="bg-white text-slate-900 border-2 border-slate-200 px-8 py-4 rounded-sm font-display font-bold text-base flex items-center justify-center gap-3 hover:border-brand-primary hover:text-brand-primary transition-colors">
+                Zobacz ofertę
               </a>
             </div>
-          </div>
 
-          <!-- Right: Visual -->
-          <div class="relative hidden lg:block">
-            <div class="relative p-2 bg-white rounded-lg shadow-2xl border border-slate-100">
-              <img src="/hero-tech-light.png" alt="Profesjonalne Usługi IT" class="w-full h-auto rounded-md opacity-90" />
-            </div>
-            
-            <!-- Glassmorphism Badge 1 -->
-            <div class="absolute -bottom-8 -left-8 bg-white/80 backdrop-blur-xl p-6 shadow-2xl border border-white/50 rounded-sm max-w-[260px]">
-              <div class="flex items-center gap-3 mb-2">
-                <div class="w-8 h-8 bg-brand-primary/10 flex items-center justify-center text-brand-primary rounded-full">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                </div>
-                <span class="font-display font-black text-2xl text-slate-900">94%</span>
-              </div>
-              <p class="text-[10px] font-mono uppercase tracking-widest text-slate-500 leading-tight font-bold">
-                Skuteczność odzyskiwania danych z dysków i kart
-              </p>
-            </div>
-
-            <!-- Glassmorphism Badge 2 -->
-            <div class="absolute -top-6 -right-6 bg-brand-primary text-white p-5 shadow-2xl rounded-sm">
-              <div class="font-display font-black text-3xl leading-none mb-1">10+</div>
-              <div class="font-mono text-[8px] uppercase tracking-[0.2em] opacity-80">Lat doświadczenia</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Metric Dashboard -->
-        <div class="mt-20 pt-8 border-t border-slate-200">
-          <div class="flex flex-wrap items-center justify-between gap-y-6">
-            {[
-              'Ekspresowa diagnostyka',
-              'Gwarancja na naprawy',
-              'Ponad 10 lat doświadczenia',
-              'Obsługa firm i klientów indywidualnych'
-            ].map(trust => (
+            <!-- The 3 Promises -->
+            <div class="flex flex-wrap justify-center lg:justify-start gap-x-8 gap-y-6 lg:gap-x-12">
               <div class="flex items-center gap-3">
-                <div class="flex-shrink-0 w-5 h-5 bg-brand-primary/10 flex items-center justify-center text-brand-primary rounded-full">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <div class="shrink-0 bg-brand-primary/10 p-1.5 rounded-full text-brand-primary">
+                  <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 </div>
-                <span class="text-xs lg:text-sm font-display font-bold text-slate-700 tracking-tight">{trust}</span>
+                <span class="text-xs sm:text-sm font-bold text-slate-900 leading-tight">Sprawna elektronika</span>
               </div>
-            ))}
+              <div class="flex items-center gap-3">
+                <div class="shrink-0 bg-brand-primary/10 p-1.5 rounded-full text-brand-primary">
+                  <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <span class="text-xs sm:text-sm font-bold text-slate-900 leading-tight">Bezpieczne dane</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="shrink-0 bg-brand-primary/10 p-1.5 rounded-full text-brand-primary">
+                  <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <span class="text-xs sm:text-sm font-bold text-slate-900 leading-tight">Chroniona firma</span>
+              </div>
+            </div>
           </div>
+
+          <!-- Visual Content (Right, span 5) -->
+          <div class="lg:col-span-5 relative hidden lg:block">
+            <!-- A clean, abstract technical visual -->
+            <div class="relative bg-white rounded-2xl p-8 lg:p-10 border border-slate-200 shadow-2xl overflow-hidden aspect-square flex flex-col justify-between group hover:shadow-brand-primary/10 transition-shadow duration-500">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,71,255,0.05),transparent_60%)] pointer-events-none transition-opacity duration-500 group-hover:opacity-100 opacity-50"></div>
+                
+                <div class="flex justify-between items-start relative z-10">
+                  <div class="w-14 h-14 bg-brand-primary/10 rounded-2xl flex items-center justify-center text-brand-primary">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                  </div>
+                  <div class="flex items-center gap-2 bg-emerald-50 text-emerald-600 px-3 py-1.5 rounded-full border border-emerald-100">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="technical-label !text-emerald-600 !tracking-widest !text-[8px] m-0 leading-none">System Active</span>
+                  </div>
+                </div>
+
+                <div class="relative z-10 mt-auto">
+                  <div class="flex items-end gap-3 mb-2">
+                    <h3 class="font-display font-black text-5xl lg:text-7xl text-slate-900 leading-none tracking-tighter">99.9<span class="text-brand-primary text-3xl">%</span></h3>
+                  </div>
+                  <p class="font-mono text-[10px] text-slate-500 uppercase tracking-[0.2em] font-bold">Skuteczności usług</p>
+                </div>
+                
+                <!-- decorative technical lines -->
+                <div class="absolute bottom-0 right-0 w-2/3 h-2/3 opacity-30 pointer-events-none" style="background-image: repeating-linear-gradient(45deg, #0047ff 0, #0047ff 1px, transparent 0, transparent 40%); background-size: 8px 8px;"></div>
+            </div>
+          </div>
+
         </div>
-			</div>
-		</section>
+      </div>
+    </section>
+
 
 		<!-- SERVICES SECTION -->
 		<section id="uslugi" class="section-padding bg-slate-50">
