@@ -29,6 +29,26 @@
     @apply font-mono text-[10px] uppercase tracking-[0.2em] text-brand-primary;
   }
 
+  .technical-label.with-cursor {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .technical-label.with-cursor::after {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 10px;
+    background-color: currentColor;
+    margin-left: 8px;
+    animation: terminal-blink 1s step-end infinite;
+  }
+
+  @keyframes terminal-blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
   .container-custom {
     @apply max-w-7xl mx-auto px-6 lg:px-12;
   }
