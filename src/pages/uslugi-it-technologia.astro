@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+import print3dImg from '../assets/images/rob-wingate-nHRfTeqAxjs-unsplash.jpg';
 
 const services = [
   {
@@ -123,11 +125,17 @@ const serviceSchema = {
                 </p>
              </div>
            </div>
-           <div class="lg:w-1/2 relative">
-              <div class="aspect-video bg-slate-100 border border-slate-200 flex items-center justify-center">
-                 <div class="technical-label text-slate-300">3D Simulation View</div>
+           <div class="lg:w-1/2 relative group">
+              <div class="aspect-video bg-slate-100 border border-slate-200 rounded-sm overflow-hidden relative shadow-2xl">
+                 <Image 
+                   src={print3dImg} 
+                   alt="Profesjonalny druk 3D w akcji - Centre Service IT" 
+                   class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                 />
+                 <div class="absolute inset-0 bg-brand-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                 <div class="technical-label text-white text-[60px] lg:text-[80px] font-black leading-none opacity-10 absolute inset-0 flex items-center justify-center pointer-events-none mix-blend-overlay">PRECISION</div>
               </div>
-              <div class="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 bg-brand-secondary text-white p-5 lg:p-6 shadow-xl max-w-[180px] lg:max-w-none">
+              <div class="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 bg-brand-secondary text-white p-5 lg:p-6 shadow-xl max-w-[180px] lg:max-w-none z-20">
                  <span class="font-mono text-[9px] lg:text-[10px] uppercase tracking-[0.2em] block mb-2">Technologia</span>
                  <p class="font-display font-bold text-sm lg:text-base">FDM & SLA Printing</p>
               </div>
