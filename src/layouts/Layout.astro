@@ -84,6 +84,7 @@ const structuredData = {
     <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)} />
 
 		<ClientRouter />
+    <slot name="head" />
 	</head>
 	<body class="overflow-x-hidden">
 		<slot />

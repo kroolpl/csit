@@ -29,12 +29,40 @@ const services = [
     points: ['Prace magisterskie', 'Badania rynkowe', 'Wizualizacja danych']
   }
 ];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Usługi IT & Technologia",
+  "description": "Strony internetowe, marketing online, druk 3D i analizy statystyczne w Centre Service IT Tarnów. Twój partner w technologii.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Centre Service IT",
+    "url": "https://csi-tarnow.pl"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "Małopolska"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Usługi IT i Technologiczne",
+    "itemListElement": services.map(s => ({
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": s.title
+      }
+    }))
+  }
+};
 ---
 
 <Layout 
   title="Usługi IT, Strony WWW i Druk 3D | Tarnów" 
   description="Strony internetowe, marketing online, druk 3D i analizy statystyczne w Centre Service IT Tarnów. Twój partner w technologii. Tel: 504 365 205."
 >
+  <script type="application/ld+json" is:inline slot="head" set:html={JSON.stringify(serviceSchema)} />
   <Navbar />
   
   <main class="pt-20">

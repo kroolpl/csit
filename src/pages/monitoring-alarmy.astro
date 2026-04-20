@@ -30,12 +30,40 @@ const targetGroups = [
   { title: 'Magazyny i hale', desc: 'Monitoring dużych powierzchni, kamery przemysłowe.' },
   { title: 'Instytucje', desc: 'Kompleksowe systemy bezpieczeństwa dla obiektów publicznych.' }
 ];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Monitoring i Systemy Alarmowe",
+  "description": "Profesjonalny montaż kamer CCTV, alarmów i kontroli dostępu w Tarnowie i Małopolsce. Bezpłatna wycena i projekt systemu.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Centre Service IT",
+    "url": "https://csi-tarnow.pl"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "Małopolska"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Systemy bezpieczeństwa",
+    "itemListElement": securityServices.map(s => ({
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": s.title
+      }
+    }))
+  }
+};
 ---
 
 <Layout 
   title="Monitoring i Systemy Alarmowe | Tarnów" 
   description="Profesjonalny montaż kamer CCTV, alarmów i kontroli dostępu w Tarnowie i Małopolsce. Bezpłatna wycena i projekt systemu. Tel: 504 365 205."
 >
+  <script type="application/ld+json" is:inline slot="head" set:html={JSON.stringify(serviceSchema)} />
   <Navbar />
   
   <main class="pt-20">

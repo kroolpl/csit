@@ -15,12 +15,40 @@ const dataTypes = [
   'Zdjęcia i filmy rodzinne', 'Dokumenty i arkusze', 'Projekty graficzne/CAD', 
   'Bazy danych i ERP', 'Kopie zapasowe', 'Dane firmowe i e-mail'
 ];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Odzyskiwanie Danych",
+  "description": "Profesjonalne odzyskiwanie danych z uszkodzonych dysków, kart pamięci i pendrive w Tarnowie. Bezpłatna analiza.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Centre Service IT",
+    "url": "https://csi-tarnow.pl"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "Małopolska"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Odzyskiwanie danych",
+    "itemListElement": sources.map(s => ({
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": s.title
+      }
+    }))
+  }
+};
 ---
 
 <Layout 
   title="Odzyskiwanie Danych | HDD, SSD, Pendrive" 
   description="Profesjonalne odzyskiwanie danych z uszkodzonych dysków, kart pamięci i pendrive w Tarnowie. Bezpłatna analiza. No data - no fee. Tel: 504 365 205."
 >
+  <script type="application/ld+json" is:inline slot="head" set:html={JSON.stringify(serviceSchema)} />
   <Navbar />
   
   <main class="pt-20">

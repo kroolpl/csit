@@ -16,12 +16,49 @@ const smartHomeFeatures = [
   { title: 'Rolety', desc: 'Automatyczne sterowanie zależne od pory dnia.' },
   { title: 'Bezpieczeństwo', desc: 'Integracja z alarmem i powiadomienia na telefon.' }
 ];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Automatyka Bram i Smart Home",
+  "description": "Profesjonalny montaż automatyki do bram wjazdowych i segmentowych oraz systemów smart home (FIBARO) w Tarnowie.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Centre Service IT",
+    "url": "https://csi-tarnow.pl"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "Małopolska"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Automatyka i Inteligentny Dom",
+    "itemListElement": [
+      ...gateAutomation.map(g => ({
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": g.title
+        }
+      })),
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Systemy Smart Home FIBARO"
+        }
+      }
+    ]
+  }
+};
 ---
 
 <Layout 
   title="Automatyka Bram i Smart Home | Tarnów" 
   description="Profesjonalny montaż automatyki do bram wjazdowych i segmentowych oraz systemów smart home (FIBARO) w Tarnowie. Tel: 504 365 205."
 >
+  <script type="application/ld+json" is:inline slot="head" set:html={JSON.stringify(serviceSchema)} />
   <Navbar />
   
   <main class="pt-20">

@@ -16,12 +16,40 @@ const cyberServices = [
   { title: 'Backup i Disaster Recovery', desc: 'Wdrażamy strategie kopii zapasowych (NAS, chmura) i regularnie testujemy odtwarzanie.' },
   { title: 'Szkolenia pracowników', desc: 'Świadomy zespół to najlepsza obrona przed socjotechniką i phishingiem.' }
 ];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Cyberbezpieczeństwo i Ochrona Danych",
+  "description": "Profesjonalne zabezpieczenia IT, audyty bezpieczeństwa i kopie zapasowe dla firm w Tarnowie. Chroń swój biznes przed hakerami.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Centre Service IT",
+    "url": "https://csi-tarnow.pl"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "Małopolska"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Usługi Cyberbezpieczeństwa",
+    "itemListElement": cyberServices.map(s => ({
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": s.title
+      }
+    }))
+  }
+};
 ---
 
 <Layout 
   title="Cyberbezpieczeństwo i Ochrona Danych | Małopolska" 
   description="Profesjonalne zabezpieczenia IT, audyty bezpieczeństwa i kopie zapasowe dla firm w Tarnowie. Chroń swój biznes przed hakerami. Tel: 504 365 205."
 >
+  <script type="application/ld+json" is:inline slot="head" set:html={JSON.stringify(serviceSchema)} />
   <Navbar />
   
   <main class="pt-20">

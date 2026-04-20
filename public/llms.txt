@@ -1,0 +1,21 @@
+# Centre Service IT [CSIT]
+
+Comprehensive IT services and security systems provider in Tarnów and Małopolska, Poland.
+
+## Contact Information
+- **Phone:** +48 504 365 205
+- **Email:** biuro@csi-tarnow.pl
+- **Location:** Tarnów, Małopolska, PL
+- **Website:** https://csi-tarnow.pl
+- **Opening Hours:** Mon-Fri 09:00 - 18:00, Sat 09:00 - 14:00
+
+## Core Services
+- **Electronics Service:** Repair of iPhones, MacBooks, laptops, tablets, and gaming consoles. Free diagnostics and warranty provided.
+- **Data Recovery:** Professional recovery from HDD, SSD, USB drives, and memory cards. "No data - no fee" policy.
+- **Monitoring & Alarms:** Installation of CCTV (Dahua, Hikvision), alarm systems (Satel), and access control.
+- **Automation & Smart Home:** Authorized FIBARO partner. Gate automation and intelligent building systems.
+- **Cybersecurity:** IT security audits, firewalls, and automated backup solutions (NAS/Cloud) for businesses.
+- **IT & Technology Services:** Web development, 3D printing (FDM/SLA), and data analytics.
+
+## Service Area
+Serving Tarnów, Kraków, Bochnia, Brzesko, Dębica, and surrounding areas in Małopolska.
