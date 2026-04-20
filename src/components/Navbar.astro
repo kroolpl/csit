@@ -108,7 +108,7 @@ const isServicePage = serviceItems.some(item => currentPath.startsWith(item.href
 
     <!-- Mobile Menu Button & Sheet -->
     <div class="lg:hidden flex items-center">
-      <MobileMenu client:load currentPath={currentPath} />
+      <MobileMenu client:only="react" currentPath={currentPath} />
     </div>
   </div>
 </nav>

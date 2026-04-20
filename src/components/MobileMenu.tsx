@@ -41,7 +41,7 @@ export default function MobileMenu({ currentPath = '/' }: MobileMenuProps) {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="lg:hidden p-2 text-brand-secondary hover:text-brand-primary transition-colors focus:outline-none"
+        className="lg:hidden p-2 text-brand-secondary hover:text-brand-primary transition-colors focus:outline-none relative z-50 cursor-pointer touch-manipulation"
         aria-label="Open menu"
       >
         <Menu size={28} strokeWidth={1.5} />
