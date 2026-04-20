@@ -69,9 +69,13 @@ export default function MobileMenu({ currentPath = '/' }: MobileMenuProps) {
             >
               {/* Header */}
               <div className="p-6 flex items-center justify-between border-b border-slate-100">
-                <div className="flex flex-col">
-                  <span className="font-display font-bold text-brand-secondary tracking-tighter">CENTRE SERVICE IT</span>
-                  <span className="font-mono text-[8px] uppercase tracking-widest text-brand-primary">Mobile Access</span>
+                <div className="flex items-center gap-2">
+                  <span className="font-mono font-bold text-brand-secondary tracking-tighter text-lg">[CSIT]</span>
+                  <span className="w-1.5 h-3 bg-brand-primary animate-pulse"></span>
+                  <div className="ml-2 border-l border-slate-200 pl-2 flex flex-col">
+                    <span className="font-mono text-[8px] uppercase tracking-widest text-brand-primary leading-none">Mobile</span>
+                    <span className="font-mono text-[6px] uppercase tracking-[0.2em] text-slate-400 leading-none mt-1">Access</span>
+                  </div>
                 </div>
                 <button
                   onClick={() => setIsOpen(false)}
