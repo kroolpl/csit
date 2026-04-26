@@ -180,7 +180,7 @@ const features = [
 								<!-- Icon + number row -->
 								<div class="flex items-center justify-between mb-6 lg:mb-8">
 									<div class="w-12 h-12 bg-brand-primary/10 group-hover:bg-brand-primary/20 flex items-center justify-center text-brand-primary transition-colors" set:html={service.icon} />
-									<span class="font-mono text-xs text-slate-300 group-hover:text-white/40">{service.id}</span>
+									<span class="font-mono text-xs text-slate-400 group-hover:text-white/60">{service.id}</span>
 								</div>
 								<h3 class="text-xl lg:text-2xl font-display font-bold text-brand-secondary group-hover:text-white mb-3 lg:mb-4 leading-tight">{service.title}</h3>
 								<p class="text-sm text-slate-500 group-hover:text-white/70 leading-relaxed">{service.description}</p>
@@ -236,7 +236,7 @@ const features = [
 		<!-- SOCIAL PROOF -->
 		<section class="section-padding bg-brand-secondary text-white">
 			<div class="container-custom text-center mb-16 lg:mb-20">
-				<span class="technical-label with-cursor text-brand-primary mb-4 block">Opinie klientów</span>
+				<span class="technical-label with-cursor text-white/80 mb-4 block">Opinie klientów</span>
 				<h2 class="text-3xl lg:text-6xl font-display font-bold mb-6">Co mówią o nas nasi klienci?</h2>
 			</div>
 			<div class="container-custom">
@@ -256,7 +256,7 @@ const features = [
 								</div>
 							</div>
 							<p class="text-lg lg:text-xl text-white/90 mb-6 lg:mb-8 italic leading-relaxed">"{testimonial.text}"</p>
-							<span class="technical-label text-brand-primary text-[10px]">{testimonial.author}</span>
+							<span class="technical-label text-white/70 text-[10px]">{testimonial.author}</span>
 						</div>
 					))}
 				</div>
