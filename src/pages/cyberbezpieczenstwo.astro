@@ -83,8 +83,8 @@ const serviceSchema = {
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {threats.map(t => (
             <div class="p-8 lg:p-10 border border-white/10 bg-white/5 hover:border-brand-primary transition-colors">
-              <h4 class="text-lg lg:text-xl font-display font-bold mb-4">{t.title}</h4>
-              <p class="text-white/60 text-xs lg:text-sm leading-relaxed">{t.desc}</p>
+              <h3 class="text-lg lg:text-xl font-display font-bold mb-4">{t.title}</h3>
+              <p class="text-white/70 text-xs lg:text-sm leading-relaxed">{t.desc}</p>
             </div>
           ))}
         </div>
@@ -135,7 +135,7 @@ const serviceSchema = {
                 <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
                    <div class="h-full bg-brand-primary w-full animate-pulse"></div>
                 </div>
-                <div class="flex justify-between text-[10px] font-mono uppercase tracking-widest text-slate-400">
+                <div class="flex justify-between text-[10px] font-mono uppercase tracking-widest text-slate-500">
                    <span>Encrypted</span>
                    <span>Verified</span>
                    <span>Redundant</span>

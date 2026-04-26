@@ -57,9 +57,9 @@ const contactMethods = [
               <div class="w-14 h-14 bg-slate-50 flex items-center justify-center text-brand-primary mb-8 group-hover:bg-brand-primary group-hover:text-white transition-colors">
                 <div set:html={item.icon} />
               </div>
-              <h3 class="font-display font-bold text-xl text-brand-secondary mb-2">{item.title}</h3>
+              <h2 class="font-display font-bold text-xl text-brand-secondary mb-2">{item.title}</h2>
               <p class="font-display font-black text-2xl text-brand-secondary group-hover:text-brand-primary transition-colors mb-2 tracking-tight">{item.value}</p>
-              <p class="text-sm text-slate-400">{item.sub}</p>
+              <p class="text-sm text-slate-500">{item.sub}</p>
             </a>
           ))}
         </div>
@@ -79,16 +79,16 @@ const contactMethods = [
             <form class="space-y-6">
               <div class="grid sm:grid-cols-2 gap-6">
                 <div class="space-y-2">
-                  <label class="font-mono text-[10px] uppercase text-slate-400 font-bold tracking-widest">Imię i nazwisko</label>
+                  <label class="font-mono text-[10px] uppercase text-slate-500 font-bold tracking-widest">Imię i nazwisko</label>
                   <input type="text" placeholder="Jan Kowalski" class="w-full bg-white border border-slate-200 p-4 focus:outline-none focus:border-brand-primary transition-colors text-sm" required />
                 </div>
                 <div class="space-y-2">
-                  <label class="font-mono text-[10px] uppercase text-slate-400 font-bold tracking-widest">Telefon lub e-mail</label>
+                  <label class="font-mono text-[10px] uppercase text-slate-500 font-bold tracking-widest">Telefon lub e-mail</label>
                   <input type="text" placeholder="504 365 205" class="w-full bg-white border border-slate-200 p-4 focus:outline-none focus:border-brand-primary transition-colors text-sm" required />
                 </div>
               </div>
               <div class="space-y-2">
-                <label class="font-mono text-[10px] uppercase text-slate-400 font-bold tracking-widest">W czym możemy pomóc?</label>
+                <label class="font-mono text-[10px] uppercase text-slate-500 font-bold tracking-widest">W czym możemy pomóc?</label>
                 <textarea rows="5" placeholder="Opisz usterkę lub zapytaj o usługę..." class="w-full bg-white border border-slate-200 p-4 focus:outline-none focus:border-brand-primary transition-colors text-sm resize-none" required></textarea>
               </div>
               <button type="submit" class="w-full bg-brand-primary text-white py-5 rounded-sm font-display font-bold text-lg hover:bg-brand-secondary transition-all shadow-xl shadow-brand-primary/20">

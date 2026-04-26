@@ -115,7 +115,7 @@ const serviceSchema = {
             {steps.map(step => (
               <div>
                 <span class="font-mono text-xs text-brand-primary font-bold uppercase tracking-widest mb-4 block">{step.label}</span>
-                <h4 class="text-xl font-display font-bold text-brand-secondary mb-4">{step.title}</h4>
+                <h3 class="text-xl font-display font-bold text-brand-secondary mb-4">{step.title}</h3>
                 <p class="text-slate-600 text-sm leading-relaxed">{step.desc}</p>
               </div>
             ))}
@@ -127,7 +127,7 @@ const serviceSchema = {
     <!-- BRANDS -->
     <section class="py-20 bg-white">
       <div class="container-custom text-center">
-        <h3 class="technical-label text-slate-400 mb-10">Naprawiamy wszystkie marki</h3>
+        <h2 class="technical-label text-slate-500 mb-10">Naprawiamy wszystkie marki</h2>
         <p class="text-xl lg:text-3xl font-display font-bold text-brand-secondary opacity-40 leading-relaxed max-w-5xl mx-auto">
           Apple · Samsung · Huawei · Xiaomi · Lenovo · HP · Dell · ASUS · Acer · Sony · LG · OnePlus · i wiele innych
         </p>
@@ -144,7 +144,7 @@ const serviceSchema = {
         <div class="space-y-8">
           {faqs.map(faq => (
             <div class="bg-white p-8 border border-slate-200">
-              <h4 class="text-lg font-display font-bold text-brand-secondary mb-3">Q: {faq.q}</h4>
+              <h3 class="text-lg font-display font-bold text-brand-secondary mb-3">Q: {faq.q}</h3>
               <p class="text-slate-600 leading-relaxed">A: {faq.a}</p>
             </div>
           ))}

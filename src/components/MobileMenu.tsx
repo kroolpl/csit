@@ -74,12 +74,13 @@ export default function MobileMenu({ currentPath = '/' }: MobileMenuProps) {
                   <span className="w-1.5 h-3 bg-brand-primary animate-pulse"></span>
                   <div className="ml-2 border-l border-slate-200 pl-2 flex flex-col">
                     <span className="font-mono text-[8px] uppercase tracking-widest text-brand-primary leading-none">Mobile</span>
-                    <span className="font-mono text-[6px] uppercase tracking-[0.2em] text-slate-400 leading-none mt-1">Access</span>
+                    <span className="font-mono text-[6px] uppercase tracking-[0.2em] text-slate-500 leading-none mt-1">Access</span>
                   </div>
                 </div>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-2 text-slate-400 hover:text-brand-primary transition-colors"
+                  className="p-2 text-slate-500 hover:text-brand-primary transition-colors"
+                  aria-label="Close menu"
                 >
                   <X size={24} />
                 </button>
@@ -97,7 +98,7 @@ export default function MobileMenu({ currentPath = '/' }: MobileMenuProps) {
                   <div className="flex items-center gap-3">
                     <Home
                       size={15}
-                      className={currentPath === '/' ? 'text-brand-primary' : 'text-slate-400 group-hover:text-brand-primary transition-colors'}
+                      className={currentPath === '/' ? 'text-brand-primary' : 'text-slate-500 group-hover:text-brand-primary transition-colors'}
                     />
                     <span className={cn(
                       'text-base font-display font-bold transition-colors',
@@ -106,7 +107,7 @@ export default function MobileMenu({ currentPath = '/' }: MobileMenuProps) {
                       Strona Główna
                     </span>
                   </div>
-                  <ArrowRight size={16} className="text-slate-300 group-hover:text-brand-primary group-hover:translate-x-1 transition-all" />
+                  <ArrowRight size={16} className="text-slate-400 group-hover:text-brand-primary group-hover:translate-x-1 transition-all" />
                 </a>
 
                 {/* Usługi — collapsible */}
@@ -114,6 +115,8 @@ export default function MobileMenu({ currentPath = '/' }: MobileMenuProps) {
                   <button
                     onClick={() => setServicesOpen(prev => !prev)}
                     className="w-full flex items-center justify-between py-4"
+                    aria-expanded={servicesOpen}
+                    aria-controls="mobile-services-list"
                   >
                     <span className={cn(
                       'text-base font-display font-bold',
@@ -127,7 +130,7 @@ export default function MobileMenu({ currentPath = '/' }: MobileMenuProps) {
                     >
                       <ChevronDown
                         size={18}
-                        className={isServicePage ? 'text-brand-primary' : 'text-slate-400'}
+                        className={isServicePage ? 'text-brand-primary' : 'text-slate-500'}
                       />
                     </motion.div>
                   </button>
@@ -135,6 +138,7 @@ export default function MobileMenu({ currentPath = '/' }: MobileMenuProps) {
                   <AnimatePresence initial={false}>
                     {servicesOpen && (
                       <motion.ul
+                        id="mobile-services-list"
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
@@ -164,7 +168,7 @@ export default function MobileMenu({ currentPath = '/' }: MobileMenuProps) {
                               )}>
                                 {item.label}
                               </span>
-                              <span className="text-[10px] text-slate-400 mt-0.5 leading-snug">{item.desc}</span>
+                              <span className="text-[10px] text-slate-500 mt-0.5 leading-snug">{item.desc}</span>
                             </a>
                           </motion.li>
                         ))}
@@ -185,7 +189,7 @@ export default function MobileMenu({ currentPath = '/' }: MobileMenuProps) {
                   )}>
                     O nas
                   </span>
-                  <ArrowRight size={16} className="text-slate-300 group-hover:text-brand-primary group-hover:translate-x-1 transition-all" />
+                  <ArrowRight size={16} className="text-slate-400 group-hover:text-brand-primary group-hover:translate-x-1 transition-all" />
                 </a>
 
                 {/* Kontakt */}
@@ -200,7 +204,7 @@ export default function MobileMenu({ currentPath = '/' }: MobileMenuProps) {
                   )}>
                     Kontakt
                   </span>
-                  <ArrowRight size={16} className="text-slate-300 group-hover:text-brand-primary group-hover:translate-x-1 transition-all" />
+                  <ArrowRight size={16} className="text-slate-400 group-hover:text-brand-primary group-hover:translate-x-1 transition-all" />
                 </a>
 
               </nav>
@@ -214,7 +218,7 @@ export default function MobileMenu({ currentPath = '/' }: MobileMenuProps) {
                   <Phone size={20} fill="currentColor" />
                   504 365 205
                 </a>
-                <p className="text-center mt-6 font-mono text-[9px] uppercase tracking-widest text-slate-400">
+                <p className="text-center mt-6 font-mono text-[9px] uppercase tracking-widest text-slate-500">
                   Dostępność: Pn-Pt 9:00 - 18:00
                 </p>
               </div>

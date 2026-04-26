@@ -83,7 +83,7 @@ const partners = ['Apple', 'Samsung', 'Synology', 'Dahua', 'Hikvision', 'FIBARO'
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-slate-200 border border-slate-200">
           {values.map(v => (
             <div class="bg-white p-8 lg:p-12 hover:bg-slate-50 transition-colors">
-              <h4 class="text-lg lg:text-xl font-display font-bold text-brand-secondary mb-4 lg:mb-6">{v.title}</h4>
+              <h3 class="text-lg lg:text-xl font-display font-bold text-brand-secondary mb-4 lg:mb-6">{v.title}</h3>
               <p class="text-slate-600 text-sm leading-relaxed">{v.desc}</p>
             </div>
           ))}
@@ -94,7 +94,7 @@ const partners = ['Apple', 'Samsung', 'Synology', 'Dahua', 'Hikvision', 'FIBARO'
     <!-- PARTNERS -->
     <section class="py-24 bg-slate-50 border-t border-slate-200">
       <div class="container-custom">
-        <h3 class="technical-label with-cursor text-center text-slate-400 mb-12">Zaufane marki i partnerzy</h3>
+        <h2 class="technical-label with-cursor text-center text-slate-500 mb-12">Zaufane marki i partnerzy</h2>
         <div class="flex flex-wrap justify-center gap-x-12 gap-y-8 grayscale opacity-40">
            {partners.map(p => (
              <span class="font-display font-black text-2xl lg:text-4xl tracking-tighter text-slate-900">{p}</span>
