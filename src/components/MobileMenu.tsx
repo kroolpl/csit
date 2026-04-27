@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone, ArrowRight, ChevronDown, Home } from 'lucide-react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import BusinessStatus from './BusinessStatus';
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -218,9 +219,9 @@ export default function MobileMenu({ currentPath = '/' }: MobileMenuProps) {
                   <Phone size={20} fill="currentColor" />
                   504 365 205
                 </a>
-                <p className="text-center mt-6 font-mono text-[9px] uppercase tracking-widest text-slate-500">
-                  Dostępność: Pn-Pt 9:00 - 18:00
-                </p>
+                <div className="flex justify-center mt-5">
+                  <BusinessStatus />
+                </div>
               </div>
             </motion.div>
           </>
