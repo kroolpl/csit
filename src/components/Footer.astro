@@ -1,4 +1,5 @@
 ---
+import BusinessStatus from './BusinessStatus.tsx';
 const currentYear = new Date().getFullYear();
 ---
 
@@ -91,12 +92,27 @@ const currentYear = new Date().getFullYear();
       <div>
         <div class="flex items-center gap-2 mb-8">
           <div class="w-1.5 h-1.5 bg-brand-primary"></div>
-          <h3 class="font-mono font-bold text-brand-secondary uppercase tracking-widest text-xs">Terminy</h3>
+          <h3 class="font-mono font-bold text-brand-secondary uppercase tracking-widest text-xs">Godziny</h3>
         </div>
-        <ul class="space-y-4 text-sm text-slate-600 font-medium">
-          <li class="flex justify-between border-b border-slate-200/60 pb-2"><span>Pn – Pt</span> <span>9:00 – 18:00</span></li>
-          <li class="flex justify-between border-b border-slate-200/60 pb-2"><span>Sobota</span> <span>9:00 – 14:00</span></li>
-          <li class="flex justify-between text-brand-primary/80"><span>Niedziela</span> <span>Standby</span></li>
+
+        <!-- Live business status widget -->
+        <div class="bg-white border border-slate-200 p-4 mb-6 shadow-sm">
+          <BusinessStatus client:load />
+        </div>
+
+        <ul class="space-y-3 text-sm text-slate-600 font-medium">
+          <li class="flex justify-between border-b border-slate-200/60 pb-2">
+            <span class="font-mono text-[10px] uppercase tracking-widest text-slate-500">Pn – Pt</span>
+            <span class="font-mono text-[10px] font-bold text-brand-secondary">9:00 – 18:00</span>
+          </li>
+          <li class="flex justify-between border-b border-slate-200/60 pb-2">
+            <span class="font-mono text-[10px] uppercase tracking-widest text-slate-500">Sobota</span>
+            <span class="font-mono text-[10px] font-bold text-brand-secondary">9:00 – 14:00</span>
+          </li>
+          <li class="flex justify-between">
+            <span class="font-mono text-[10px] uppercase tracking-widest text-slate-500">Niedziela</span>
+            <span class="font-mono text-[10px] text-red-400">Zamknięte</span>
+          </li>
         </ul>
       </div>
     </div>
