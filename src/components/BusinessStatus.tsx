@@ -137,38 +137,35 @@ export default function BusinessStatus() {
   }, []);
 
   return (
-    <div className="flex items-center gap-3 select-none">
+    <div className="flex items-center gap-2 select-none">
       {/* Status dot */}
       <div className="relative flex-shrink-0">
         <span
           className={[
-            'block w-2.5 h-2.5 rounded-full',
+            'block w-1.5 h-1.5 rounded-full',
             status.isOpen
-              ? 'bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.6)]'
-              : 'bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.5)]',
+              ? 'bg-emerald-500'
+              : 'bg-red-400',
           ].join(' ')}
         />
         {status.isOpen && (
-          <span className="absolute inset-0 rounded-full bg-emerald-400 animate-ping opacity-60" />
+          <span className="absolute inset-0 rounded-full bg-emerald-400 animate-ping opacity-50" />
         )}
       </div>
 
       {/* Text info */}
       <div className="flex flex-col leading-snug">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5">
           <span
             className={[
-              'font-mono font-bold text-[10px] uppercase tracking-[0.18em]',
-              status.isOpen ? 'text-emerald-600' : 'text-red-500',
+              'font-mono font-bold text-[9px] uppercase tracking-[0.18em]',
+              status.isOpen ? 'text-emerald-600' : 'text-red-400',
             ].join(' ')}
           >
             {status.label}
           </span>
-          <span className="font-mono text-[9px] text-slate-400 uppercase tracking-widest hidden sm:inline">
-            · PL {status.timeInPoland}
-          </span>
         </div>
-        <span className="font-mono text-[9px] text-slate-500 uppercase tracking-widest">
+        <span className="font-mono text-[8px] text-slate-400 uppercase tracking-widest">
           {status.countdown}
         </span>
       </div>
