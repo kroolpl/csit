@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import { Image } from 'astro:assets';
 import csitWorkshop from '../assets/images/csit_workshop.webp';
+import tarnowMap from '../assets/images/tarnow_map_bg.png';
 
 const services = [
   {
@@ -266,7 +267,11 @@ const features = [
 		<!-- LOCAL COVERAGE -->
 		<section class="section-padding">
 			<div class="container-custom">
-				<div class="bg-slate-50 border border-slate-200 p-8 lg:p-24 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+				<div class="bg-slate-50 border border-slate-200 p-8 lg:p-24 flex flex-col lg:flex-row items-center gap-12 lg:gap-16 relative overflow-hidden group">
+          <!-- Stylized Map Background -->
+          <div class="absolute inset-0 opacity-[0.12] pointer-events-none group-hover:opacity-[0.18] transition-opacity duration-700">
+            <Image src={tarnowMap} alt="" class="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-[20s] ease-linear" />
+          </div>
 					<div class="flex-1 text-center lg:text-left">
 						<span class="technical-label with-cursor mb-4 block">Nasz zasięg</span>
 						<h2 class="text-3xl lg:text-6xl font-display font-bold text-brand-secondary mb-6 leading-tight">Działamy w Tarnowie i całej Małopolsce</h2>
