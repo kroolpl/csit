@@ -18,7 +18,7 @@
   html {
     font-display: swap;
   }
-...
+  body {
     @apply bg-[var(--color-surface-bg)] text-[var(--color-text-main)] font-sans antialiased;
   }
 
