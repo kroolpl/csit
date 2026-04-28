@@ -1,4 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
+
 import { MessageSquare, X, Send, Bot, User, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -106,7 +108,13 @@ export default function AIChat() {
                       ? 'bg-brand-primary text-white' 
                       : 'bg-white border border-slate-200 text-slate-700'
                   }`}>
-                    {m.content}
+                    {m.role === 'user' ? (
+                      m.content
+                    ) : (
+                      <div className="prose prose-sm max-w-none prose-slate prose-p:leading-relaxed prose-pre:bg-slate-900 prose-pre:text-slate-100">
+                        <ReactMarkdown>{m.content}</ReactMarkdown>
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
