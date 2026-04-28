@@ -43,6 +43,11 @@ export default function AIChat() {
         body: JSON.stringify({ messages: [...messages, userMessage] }),
       });
 
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`Server error: ${response.status} ${errorText}`);
+      }
+
       const data = await response.json();
       if (data.content) {
         setMessages(prev => [...prev, { role: 'assistant', content: data.content }]);
