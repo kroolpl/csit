@@ -1,7 +1,6 @@
 import type { APIRoute } from 'astro';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import fs from 'node:fs';
-import path from 'node:path';
+import knowledgeBase from '../../assets/knowledge.md?raw';
 
 export const POST: APIRoute = async ({ request }) => {
   try {
@@ -9,12 +8,12 @@ export const POST: APIRoute = async ({ request }) => {
     const apiKey = import.meta.env.GEMINI_API_KEY;
 
     if (!apiKey) {
-      return new Response(JSON.stringify({ error: 'API Key not configured' }), { status: 500 });
+      console.error('GEMINI_API_KEY is missing');
+      return new Response(JSON.stringify({ error: 'System configuration error: API Key missing' }), { 
+        status: 500,
+        headers: { 'Content-Type': 'application/json' }
+      });
     }
-
-    // Read Knowledge Base
-    const knowledgePath = path.resolve('./src/assets/knowledge.md');
-    const knowledgeBase = fs.readFileSync(knowledgePath, 'utf-8');
 
     const genAI = new GoogleGenerativeAI(apiKey);
     const model = genAI.getGenerativeModel({ 
