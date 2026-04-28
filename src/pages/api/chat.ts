@@ -18,7 +18,10 @@ export const POST: APIRoute = async ({ request }) => {
     const genAI = new GoogleGenerativeAI(apiKey);
     const model = genAI.getGenerativeModel({ 
       model: 'gemini-1.5-flash',
-      systemInstruction: knowledgeBase
+      systemInstruction: {
+        role: 'system',
+        parts: [{ text: knowledgeBase }]
+      }
     });
 
     // Format history for Gemini
@@ -37,8 +40,15 @@ export const POST: APIRoute = async ({ request }) => {
       status: 200,
       headers: { 'Content-Type': 'application/json' }
     });
-  } catch (error) {
-    console.error('AI Chat Error:', error);
-    return new Response(JSON.stringify({ error: 'Failed to generate response' }), { status: 500 });
+  } catch (error: any) {
+    console.error('AI Chat Error Details:', error);
+    return new Response(JSON.stringify({ 
+      error: 'Failed to generate response',
+      details: error.message || 'Unknown error'
+    }), { 
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
+    });
   }
 };
+
