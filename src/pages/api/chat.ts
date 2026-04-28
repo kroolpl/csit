@@ -17,7 +17,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     const genAI = new GoogleGenerativeAI(apiKey);
     const model = genAI.getGenerativeModel({ 
-      model: 'gemini-1.5-flash',
+      model: 'gemini-3-flash-preview',
       systemInstruction: {
         role: 'system',
         parts: [{ text: knowledgeBase }]
