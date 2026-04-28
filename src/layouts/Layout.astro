@@ -5,6 +5,7 @@ import '@fontsource/jetbrains-mono';
 import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
 import CallFAB from '../components/CallFAB.tsx';
+import AIChat from '../components/AIChat.tsx';
 
 interface Props {
 	title: string;
@@ -123,6 +124,7 @@ const breadcrumbSchema = breadcrumbs.length > 0 ? {
 	<body class="overflow-x-hidden">
 		<slot />
 		<CallFAB client:idle />
+    <AIChat client:load />
 	</body>
 </html>
 
