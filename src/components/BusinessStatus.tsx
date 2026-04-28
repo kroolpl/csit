@@ -127,14 +127,36 @@ function getStatus(): BusinessState {
 }
 
 export default function BusinessStatus() {
+  const [mounted, setMounted] = useState(false);
   const [status, setStatus] = useState<BusinessState>(getStatus);
 
   useEffect(() => {
+    setMounted(true);
     const tick = () => setStatus(getStatus());
     // Update every 30 seconds
     const id = setInterval(tick, 30_000);
     return () => clearInterval(id);
   }, []);
+
+  if (!mounted) {
+    return (
+      <div className="flex items-center gap-2 select-none opacity-0">
+        <div className="relative flex-shrink-0">
+          <span className="block w-1.5 h-1.5 rounded-full bg-slate-200" />
+        </div>
+        <div className="flex flex-col leading-snug">
+          <div className="flex items-center gap-1.5">
+            <span className="font-mono font-bold text-[9px] uppercase tracking-[0.18em] text-slate-200">
+              Ładowanie
+            </span>
+          </div>
+          <span className="font-mono text-[8px] text-slate-200 uppercase tracking-widest">
+            ...
+          </span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex items-center gap-2 select-none">
