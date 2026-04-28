@@ -62,6 +62,10 @@ const serviceSchema = {
 <Layout 
   title="Monitoring i Systemy Alarmowe | Tarnów" 
   description="Profesjonalny montaż kamer CCTV, alarmów i kontroli dostępu w Tarnowie i Małopolsce. Bezpłatna wycena i projekt systemu. Tel: 504 365 205."
+  breadcrumbs={[
+    { name: "Usługi", item: "/#uslugi" },
+    { name: "Monitoring & Alarmy", item: "/monitoring-alarmy" }
+  ]}
 >
   <script type="application/ld+json" is:inline slot="head" set:html={JSON.stringify(serviceSchema)} />
   <Navbar />

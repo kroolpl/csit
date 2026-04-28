@@ -61,8 +61,12 @@ const serviceSchema = {
 ---
 
 <Layout 
-  title="Usługi IT, Strony WWW i Druk 3D | Tarnów" 
+  title="Usługi IT, Strony WWW i Druk 3D Tarnów" 
   description="Strony internetowe, marketing online, druk 3D i analizy statystyczne w Centre Service IT Tarnów. Twój partner w technologii. Tel: 504 365 205."
+  breadcrumbs={[
+    { name: "Usługi", item: "/#uslugi" },
+    { name: "Usługi IT", item: "/uslugi-it-technologia" }
+  ]}
 >
   <script type="application/ld+json" is:inline slot="head" set:html={JSON.stringify(serviceSchema)} />
   <Navbar />

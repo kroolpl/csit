@@ -46,8 +46,12 @@ const serviceSchema = {
 ---
 
 <Layout 
-  title="Cyberbezpieczeństwo i Ochrona Danych | Małopolska" 
+  title="Cyberbezpieczeństwo i Audyty IT Tarnów | Bezpieczna Firma" 
   description="Profesjonalne zabezpieczenia IT, audyty bezpieczeństwa i kopie zapasowe dla firm w Tarnowie. Chroń swój biznes przed hakerami. Tel: 504 365 205."
+  breadcrumbs={[
+    { name: "Usługi", item: "/#uslugi" },
+    { name: "Cyberbezpieczeństwo", item: "/cyberbezpieczenstwo" }
+  ]}
 >
   <script type="application/ld+json" is:inline slot="head" set:html={JSON.stringify(serviceSchema)} />
   <Navbar />

@@ -45,8 +45,12 @@ const serviceSchema = {
 ---
 
 <Layout 
-  title="Odzyskiwanie Danych | HDD, SSD, Pendrive" 
+  title="Odzyskiwanie Danych Tarnów | HDD, SSD, Pendrive" 
   description="Profesjonalne odzyskiwanie danych z uszkodzonych dysków, kart pamięci i pendrive w Tarnowie. Bezpłatna analiza. No data - no fee. Tel: 504 365 205."
+  breadcrumbs={[
+    { name: "Usługi", item: "/#uslugi" },
+    { name: "Odzyskiwanie Danych", item: "/odzyskiwanie-danych" }
+  ]}
 >
   <script type="application/ld+json" is:inline slot="head" set:html={JSON.stringify(serviceSchema)} />
   <Navbar />

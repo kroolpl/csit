@@ -57,6 +57,10 @@ const serviceSchema = {
 <Layout 
   title="Automatyka Bram i Smart Home | Tarnów" 
   description="Profesjonalny montaż automatyki do bram wjazdowych i segmentowych oraz systemów smart home (FIBARO) w Tarnowie. Tel: 504 365 205."
+  breadcrumbs={[
+    { name: "Usługi", item: "/#uslugi" },
+    { name: "Automatyka & Smart Home", item: "/automatyka-smart-home" }
+  ]}
 >
   <script type="application/ld+json" is:inline slot="head" set:html={JSON.stringify(serviceSchema)} />
   <Navbar />

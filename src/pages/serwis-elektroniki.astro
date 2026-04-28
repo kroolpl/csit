@@ -50,13 +50,31 @@ const serviceSchema = {
     }))
   }
 };
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.a
+    }
+  }))
+};
 ---
 
 <Layout 
-  title="Serwis Elektroniki | iPhone, MacBook, Laptopy" 
+  title="Serwis Elektroniki Tarnów | iPhone, MacBook, Laptopy" 
   description="Profesjonalna naprawa smartfonów, laptopów i konsol w Tarnowie. Bezpłatna diagnostyka i gwarancja na każdą usługę. Tel: 504 365 205."
+  breadcrumbs={[
+    { name: "Usługi", item: "/#uslugi" },
+    { name: "Serwis Elektroniki", item: "/serwis-elektroniki" }
+  ]}
 >
   <script type="application/ld+json" is:inline slot="head" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" is:inline slot="head" set:html={JSON.stringify(faqSchema)} />
   <Navbar />
   
   <main class="pt-20">

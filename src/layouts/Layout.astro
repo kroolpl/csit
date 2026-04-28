@@ -9,10 +9,17 @@ import CallFAB from '../components/CallFAB.tsx';
 interface Props {
 	title: string;
 	description?: string;
+  breadcrumbs?: { name: string; item: string }[];
 }
 
-const { title, description = "Centre Service IT - Profesjonalny serwis elektroniki i systemy bezpieczeństwa w Tarnowie." } = Astro.props;
+const { 
+  title, 
+  description = "Centre Service IT - Profesjonalny serwis elektroniki i systemy bezpieczeństwa w Tarnowie.",
+  breadcrumbs = []
+} = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const displayTitle = title.includes("Centre Service IT") ? title : `${title} | Centre Service IT`;
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -22,11 +29,13 @@ const structuredData = {
   "@id": "https://csi-tarnow.pl",
   "url": "https://csi-tarnow.pl",
   "telephone": "+48504365205",
+  "email": "biuro@csi-tarnow.pl",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "",
+    "streetAddress": "Tarnów",
     "addressLocality": "Tarnów",
-    "postalCode": "",
+    "addressRegion": "Małopolska",
+    "postalCode": "33-100",
     "addressCountry": "PL"
   },
   "geo": {
@@ -34,20 +43,41 @@ const structuredData = {
     "latitude": 50.0121,
     "longitude": 20.9858
   },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday"
-    ],
-    "opens": "09:00",
-    "closes": "17:00"
-  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "14:00"
+    }
+  ],
   "sameAs": []
 };
+
+const breadcrumbSchema = breadcrumbs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Start",
+      "item": Astro.site?.toString() || "https://csi-tarnow.pl"
+    },
+    ...breadcrumbs.map((bc, index) => ({
+      "@type": "ListItem",
+      "position": index + 2,
+      "name": bc.name,
+      "item": new URL(bc.item, Astro.site).toString()
+    }))
+  ]
+} : null;
 ---
 
 <!doctype html>
@@ -59,41 +89,33 @@ const structuredData = {
 		<meta name="generator" content={Astro.generator} />
 		
     <!-- Preconnect to critical domains -->
-    <link rel="preconnect" href="https://csit-tarnow.vercel.app" crossorigin />
-
-    <!-- Preload critical fonts -->
-    <link 
-      rel="preload" 
-      href="/_astro/jetbrains-mono.Bc8Ftmh3.woff2" 
-      as="font" 
-      type="font/woff2" 
-      crossorigin="anonymous" 
-    />
+    <link rel="preconnect" href="https://csi-tarnow.pl" crossorigin />
 
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Primary Meta Tags -->
-		<title>{title} | Centre Service IT</title>
-		<meta name="title" content={`${title} | Centre Service IT`} />
+		<title>{displayTitle}</title>
+		<meta name="title" content={displayTitle} />
 		<meta name="description" content={description} />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
-    <meta property="og:title" content={`${title} | Centre Service IT`} />
+    <meta property="og:title" content={displayTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL('/favicon.svg', Astro.url)} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={Astro.url} />
-    <meta property="twitter:title" content={`${title} | Centre Service IT`} />
+    <meta property="twitter:title" content={displayTitle} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL('/favicon.svg', Astro.url)} />
 
     <!-- Structured Data -->
     <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)} />
+    {breadcrumbSchema && <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />}
 
 		<ClientRouter />
     <slot name="head" />
