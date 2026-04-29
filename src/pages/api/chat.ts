@@ -20,7 +20,7 @@ export const POST: APIRoute = async ({ request }) => {
       model: 'gemini-3-flash-preview',
       systemInstruction: {
         role: 'system',
-        parts: [{ text: knowledgeBase }]
+        parts: [{ text: knowledgeBase + "\n\nWAŻNE: Twoje odpowiedzi muszą być krótkie, konkretne i zwięzłe. Unikaj lania wody. Skup się na faktach i zachęceniu do kontaktu telefonicznego." }]
       }
     });
 
